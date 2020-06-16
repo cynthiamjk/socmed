@@ -1,0 +1,102 @@
+
+
+body {
+
+	background-color: black;
+	color: white;
+}
+
+.image-container  {
+	display: grid;
+ height: 700px;
+
+}
+
+
+.homeImage {
+
+
+    
+	background-image: url("images.jpg");
+	 background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+
+}
+
+
+
+
+
+
+
+
+.navbar {
+
+	border-bottom: 1px solid red; 
+	justify-content:space-around;
+
+
+}
+
+
+.nav-item {
+  padding: 10%
+
+}
+
+.notvalid {
+
+border: 1px solid red;
+}
+
+
+.valid {
+
+border: 2px solid rgb(0,255,0);
+}
+
+
+.btn {
+
+	background: red;
+	border-color: red;
+}  
+
+.btn:visited {
+
+	background: red;
+	border-color: red;
+}
+
+.btn:focus {
+
+	background: red;
+	border-color: red;
+	outline: red; 
+} 
+
+.btn:hover {
+
+	background: LightCoral;
+	border-color: LightCoral;
+}
+
+
+
+.btn:active {
+
+	background: red;
+	border-color: red;
+}
+
+.nav-link {
+
+	color: white;
+}
+
+.nav-link:hover {
+
+	color: grey;
+}
+

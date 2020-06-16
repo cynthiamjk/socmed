@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+<head>
+	<title>Name</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="userPage.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+	<script type="text/javascript" src="signup.js"></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-sm bg-grey">
+		<ul class="navbar-nav">
+			<li  class="nav-item" id="welcomeMessage">
+				Welcome username!
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="logout" >Logout</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="accountSettings.html">Setting</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="accountSettings.html"><span class="fas fa-hand-paper"></span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="adminPage.html">Admin page</a>
+			</li>
+
+		</ul>
+	</nav>
+	<br>
+
+	<div class="content"> 
+		<div class="userSearch">Search user
+			<form>
+				<input type="text" name="username">
+				<button type="submit" value="submit">Search</button>
+			</form>
+		</div>
+		<div class="postSearch">Search post
+			<form>
+				<input type="text" name="post">
+				<button type="submit" value="submit">Search</button>
+			</form>
+		</div>
+
+		<div class="popCountryTable">Add country file
+			<form th:action="@{/addCountries}" method="post">
+				<button type="submit" value="submit">Search</button>
+			</form>
+			<p th:text="${successMessage}"></p>
+		</div>
+
+
+	</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+<head>
+	<title>Name</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="userPage.css">
+	<link rel="stylesheet" type="text/css" href="userSettings.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="signup.js"></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-sm bg-grey">
+		<ul class="navbar-nav">
+			<li  class="nav-item" id="welcomeMessage">
+				Welcome username!
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="logout" >Logout</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{profile}">Main page</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="accountSettings.html">Friend requests</a>
+			</li>
+
+		</ul>
+	</nav>
+	<br>
+
+	
+
+	<div class="all">
+		<div class="account">
+			<div class="acc"> Account </div>
+			<div class="accSettings">
+				<div class="emailSetting" >Email</div>
+				<div class="emailForm">
+					<form th:action="@{/update}" th:object="${user}" method="post" >
+						<input type="email" name="email" th:placeholder="${user.email}">
+						<button>submit</button>
+					</form>
+				</div>
+				<div class="usernameSetting">Username</div>
+				<div class="usernameForm">
+					<form  th:action="@{/update}" th:object="${user}" method="post" >
+						<input type="text" name="username" th:placeholder="${user.username}">
+							<button>submit</button>
+					</form>
+				</div>
+				<div class="locSetting">Location</div>
+				<div class="locForm">
+					<form>
+						<input type="text" name="location" >
+						<button>submit</button>
+					</form>
+				</div>
+				<div class="pwChange">password</div>
+				<div class="pwButton">
+					<a class="btn btn-primary" th:href="@{/passwordChange}"></a>Change password</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="privacySettings">
+			<div class="priv">Privacy</div>
+			<div class="privSettings">
+				<form th:action="@{/privacy}" th:object="${user}" method="post">
+				<div class="flist">Friends list privacy</div>
+				<div class=private id="pv1"></div>
+				<label class="switch">
+					<input type="checkbox" id="1"  onclick="check1()" th:field="${user.friendListIsPublic}" >
+					<span class="slider round"></span>
+				</label>
+
+				<div class="evts">Events privacy</div>
+				<div class=private id="pv2" ></div>
+				<label class="switch">
+					<input type="checkbox" id="2" onclick="check2()" th:field="${user.eventIsPublic}">
+					<span class="slider round"></span>
+				</label>
+
+					<button type="submit" value="privacy">Validate</button>
+				</form>
+			</div>
+		</div>
+<script >
+		window.onload = function() {
+  var checkBox = document.getElementById("1");
+  var text = document.getElementById("pv1");
+
+  if (checkBox.checked == true){
+   text.innerHTML = "private";
+  } else {
+    text.innerHTML = "public";
+  }
+
+  if (document.getElementById("2").checked == true){
+  document.getElementById("pv2").innerHTML = "private";
+  } else {
+    document.getElementById("pv2").innerHTML= "public";
+  }
+
+
+ if (document.getElementById("3").checked == true){
+  document.getElementById("pv3").innerHTML = "private";
+  } else {
+    document.getElementById("pv3").innerHTML= "public";
+  }
+
+}
+
+</script>
+
+		<div class="blockedUsers">
+			<div class="blocked">Blocked accounts</div>
+			<div class="blacklist">
+
+                <button style="font-size:18px">x<i class="fa fa-remove"></i></button></li>
+
+				</ul>
+				  </tr>
+			</div>
+		</div>
+	</div>
+
+<div class="deleteAccount">
+	<div class="dl">
+		Delete my account
+	<button>Delete</button>
+</div>
+</div>
+
+</div>
+
+
+
+
+</body>
+</html>

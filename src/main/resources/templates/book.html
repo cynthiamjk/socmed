@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Home</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="book.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="signup.js"></script>
+</head>
+
+
+
+  <nav class="navbar navbar-expand-sm bg-grey">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-target="#login" data-toggle="modal">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-target="#signup" data-toggle="modal">Signup</a>
+      </li>
+     
+
+    </ul>
+  </nav>
+  <br>
+  <div class="container">
+
+    <div id="login" class="modal fade" role="dialog">
+      <form th:action="@{/login}" th:object="${user}" method="post">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button data-dismiss="modal" class="close">&times;</button>
+            <h4>Login</h4>
+            <p th:text="${error}"></p>
+             <input type="email" name="email" class="email form-control" placeholder="Email" required/>
+             <input type="password" name="password" class="password form-control" placeholder="password" required/>
+             <input class="btn login" type="submit" value="Login" />
+         </div>
+       </div>
+     </div>
+      </form>
+   </div>
+
+
+   <div id="signup" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-body">
+          <button data-dismiss="modal" class="close">&times;</button>
+          <h4>SignUp</h4>
+          <form th:action="@{/signup}" th:object="${user}"  method="post">
+            <input type="email" name="email" id="email" class="email form-control"   placeholder="Email" />
+            <input type="text" name="username" id="username" class="username form-control"   placeholder="Username"/>
+            <input id="pw" type="password" name="password" class="password form-control" placeholder="Password" onblur="rmMessOnBlur()" onfocus="addMessOnFocus()" onkeyup="lengthValidation()"/>
+
+            <span id="message">
+              <p id="length" class="invalid" style="color: red" >Password must be at least 8 characters</b></p>
+            </span></p>
+            <input type="password" name="passwordc" class="password form-control" placeholder="Confirm" required/>
+            <input type="date" name="birthdate" placeholder="Birthdate" required>
+            <input class="btn login" id ="loginbtn" type="submit" onclick="errorForm()" value="Sign up" />
+
+          </form>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>
+<script>
+//removes password length error message onload
+window.onload = function() {
+  document.getElementById("message").style.display = "none";
+}
+</script>
+
+<script>
+ function errorForm() {
+  var x = document.getElementById("login");
+if (x.style.display === "none") {
+
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+<div class="image-container">
+  <div class="homeImage">
+    <img src="">
+  </div>
+
+</div>
+</body>
+</html>

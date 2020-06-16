@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+<head>
+	<title>Hello</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="userPage.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-sm bg-grey">
+		<ul class="navbar-nav">
+			<li  class="nav-item" id="welcomeMessage">
+				Welcome <span th:text="${user.username}"></span>
+			</li>
+			<li class="nav-item">
+				<span th:if="${user.username != null}"><a th:href="@{/logout}" >Log out</a></span>
+			</li>
+			<li class="nav-item">
+				<span th:if="${user.username != null}"><a th:href="@{/userSettings}">Settings</a></span>
+			</li>
+			<li class="nav-item">
+				<span th:if="${user.username != null}">
+				</span>
+
+				<a th:href="@{/friendRequests}">FR</a>
+				<span th:text="${user.requestNumber}"></span>
+				</span>
+			</li>
+			<li class="nav-item">
+				<span th:if="${user.username != null and user.role == T(com.cynthia.socmed.models.Role).ADMIN}"><a th:href="@{/adminPage}" >Admin Page</a></span>
+			</li>
+
+		</ul>
+	</nav>
+	<br>
+
+		<div class="userSearch">Search user
+			<form th:object="${user}" th:action="@{/searchUser}" method="get">
+				<input type="text" name="search" id="search" th:value="${search}"/>
+				<input type="submit" value="Search"/>
+			</form>
+
+		</div>
+
+	<div class="content" >
+
+
+	</div>
+
+	<div class="cont">
+		<div class="leftcont">
+			<div class="pp">
+				<img src="images.jpg" style="width: 250px;height: 135px" />
+				<div class="image__button">
+
+				</div>
+			</div>
+			<button class="btn_edit" onclick="">EDIT</button>
+			<div class="fl"> Friends
+				<th:block th:each="item : ${friends}">
+				<form th:action="@{/friendsProfile}" method="get">
+					<input type="hidden" name="item"  th:value="${item.username}"><p th:text="${item.username}"></p></input>
+					<input type="submit" value="View profile"/>
+				</form>
+				</th:block>
+				</div>
+			</div>
+			<div class="midcontent">
+				<div class="postf">
+				<form th:action="@{/postStuff}" method="post">
+					<label for="w3mission">postForm</label>
+
+					<input type="text" name="uPost" class="uPost" placeholder="Say something" th:value="${uPost}"/>
+					<input type="file" id="myFile" name="filename" value="add file">
+					<input type="submit" value="Post"/>
+				</form>
+				</div>
+				<div class="tl">
+					<th:block th:each="item: ${userPosts}">
+
+					<div class="post">
+						<div class="dropdown">
+							<button onclick="myFunction()" class="dropbtn">post options</button>
+							<div id="myDropdown" class="dropdown-content">
+								<a href="#">Report</a>
+								<a href="#">Remove</a>
+
+							</div>
+						</div> 
+						<div class="postContent"><span th:text="${item.text}"></span>
+
+							<span th:text="${item.date}"></span>
+							<span th:text="${item.author.username}"></span>
+
+						</div>
+
+						<div class="likeandshare"> like and share
+							<form th:action="@{/likeOrShare}"  method="post">
+								<input type="hidden" name="id" th:value="${item.id}" /><span th:text="${item.likes}"></span>
+								<span th:text="${item.id}"></span>
+								<!--<th:block th:each="l : ${ls}">
+									<span th:if="${l.}"-->
+							<button class="far fa-heart"></button>
+								<!--</th:block>-->
+							<button class="fas fa-bullhorn"></button>
+							</form>
+						</div>
+					</div>
+					</th:block>
+
+
+				</div>
+			</div>
+
+			<div class="rightcont">
+				<div class="ev">events</div>
+
+			</div>
+
+	</div>
+		</div>
+
+
+
+	</div>
+
+
+
+</body>
+</html>

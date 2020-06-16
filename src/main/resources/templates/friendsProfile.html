@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="userPage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <script type="text/javascript" src="signup.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-grey">
+    <ul class="navbar-nav">
+        <li  class="nav-item" id="welcomeMessage">
+            Welcome <span th:text="${user.username}"></span>
+        </li>
+        <li class="nav-item">
+            <span th:if="${user.username != null}"><a th:href="@{/logout}" >Log out</a></span>
+        </li>
+        <li class="nav-item">
+            <span th:if="${user.username != null}"><a th:href="@{/userSettings}">Settings</a></span>
+        </li>
+        <li class="nav-item">
+				<span th:if="${user.username != null}"><a th:href="@{/friendRequests}"><span class="fas fa-hand-paper"></span></a>
+        </li>
+        <li class="nav-item">
+            <span th:if="${user.username != null and user.role == T(com.cynthia.socmed.models.Role).ADMIN}"><a th:href="@{/adminPage}" >Admin Page</a></span>
+        </li>
+
+    </ul>
+</nav>
+<br>
+your are viewing
+<p th:text="${item.username}"></p>'s profile!
+
+
+
+</body>
+</html>
