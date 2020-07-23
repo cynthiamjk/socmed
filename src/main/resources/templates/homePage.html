@@ -54,13 +54,13 @@
                         <div class="eventPic"><img src="defaultPicture.jpg" style="max-width: 230px ;height: 150px"></div></span></div>
                     <div class="eventMisc">
                         <div class="misc">participants</div>
-                        <div class="misc"><a class="fas fa-ticket-alt"></a></div>
-                        <div class="misc"><a class="fas fa-globe"></a></div>
+                        <div class="misc"><a th:href="${item.ticketUrl}" target="_blank" class="fas fa-ticket-alt"></a></div>
+                        <div class="misc"><a th:href="${item.url}" target="_blank" class="fas fa-globe"></a></div>
                     </div>
                 </div>
                 <div class="bot">
-                    <div class="date">From</div><div class="start"><span th:text="${item.startDate}"></span></br><span th:text="${item.timeStart}"></span> l.t</div>
-                    <div class="date">To</div><div class="start"><span th:text="${item.endDate}"></span></br><span th:text="${item.timeEnd}"></span> l.t</div>                </div>
+                    <div class="date">From </div><div class="start"><span th:text="${#temporals.format(item.startDate, 'dd-MMM-yyyy')}"></span> - <span th:text="${item.timeStart}"></span> </div>
+                    <div class="date"> To </div><div class="start"><span th:text="${#temporals.format(item.endDate, 'dd-MMM-yyyy')}"></span> - <span th:text="${item.timeEnd}"></span> </div>                </div>
 
             </div>
         </th:block>

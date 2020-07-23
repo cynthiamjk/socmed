@@ -30,6 +30,7 @@ public class Event {
     private File eventPicture;
     private String picturePath;
     private String url;
+    private String ticketUrl;
 
     @ManyToMany
     private List<User> participants;

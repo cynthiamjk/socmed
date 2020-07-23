@@ -28,6 +28,7 @@
  .top {
  display: grid;
  grid-template-columns: 300px 200px;
+ align-items: center;
 
  }
 
@@ -51,6 +52,7 @@
 
  .eventShow {
  display: grid;
+ margin-top: 10px;
  grid-template-rows: 250px 250px  250px;
  grid-gap: 20px;
  }
@@ -58,7 +60,9 @@
  .eventBlocks {
  display: grid;
  grid-template-columns: 400px;
-background-color: #C8C8C8;
+
+ box-shadow: 5px 2px #A8A8A8;
+
  }
 
 .eventContent {
@@ -73,11 +77,13 @@ padding: 10px;
 .eventLoc {
 display: grid;
 grid-template-columns: 100px 100px;
+justify-items: center;
+align-items: center;
 }
 
 .bot {
 display: grid;
-grid-template-columns: 40px 150px 40px 150px;
+grid-template-columns: 60px 150px 40px 150px;
 justify-items: center;
 }
 
@@ -88,7 +94,8 @@ font-weight: lighter;
 }
 
 .start {
-display: inline-block;
+display: block ruby;
+
 
 }
 
@@ -101,6 +108,11 @@ display: inline-block;
  	border-radius: 25px;
  	margin-top: 20px;
  	border-style: groove;
+ }
+
+ .eventName {
+ font-weight: bold;
+ display: block ruby;
  }
 
  .title {

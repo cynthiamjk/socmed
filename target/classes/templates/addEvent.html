@@ -6,7 +6,7 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-            <link rel="stylesheet" type="text/css" href="book.css">
+            <link rel="stylesheet" type="text/css" href="static/addEvent.css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -18,14 +18,11 @@
 
 <nav class="navbar navbar-expand-sm bg-grey">
     <ul class="navbar-nav">
-        <li  class="nav-item" id="welcomeMessage">
-            Welcome username!
+        <li class="nav-item">
+            <a class="nav-link" href="profile.html">Main page</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="logout" >Logout</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="accountSettings.html">Main page</a>
         </li>
 
     </ul>
@@ -34,44 +31,55 @@
 
 
 
-<div class="container">
-  <!--  <form action="/newEvent" method="post">
-        <div class="events"> post content
-            <input type="text" class="eventLink" placeholder="add your link here">
-            <button>submit</button>
-        </div>
-    </form>-->
-    <form action="/newEvent" method="post" enctype="multipart/form-data">
-        <div class="events"> post content
-            <input type="text" class="name" name="name" placeholder="Event name">
+<div class="content">
+    <div class="contentparts">
+        <div class="oon"><h4>New event</h4><p>(Please make sure that all informations are correct or the event may be removed)</p></div>
+        <form action="/newEvent" method="post" enctype="multipart/form-data">
+        <div class="eventBody">
 
-            <div class="bDate">From
+               <div class="left">
+                   <div class="nameInput"> Event name
+            <input type="text" class="name" name="name" placeholder="Event name"></div>
+                   <div class="bDate"><span class="it">From</span>
                 <input type="date" class="date" name="startDate" placeholder="StartDate" required>
             </div>
-            <div class="bDate">From
-                <input type="time" class="date" name="startTime" placeholder="HH-mm" required>
-            </div>
-            <div class="bDate">To
+                   <div class="bDate"><span class="it">To</span>
                 <input type="date" class="date" name="endDate" placeholder="endDate" required>
             </div>
-            <div class="bDate">From
+                   <div class="linkTo"> Website URL
+                       <span th:text="${urlError}"  style="color: red; font-style: italic"></span>
+                       <input type="text"  name="url" placeholder="URL"  />
+                   </div>
+                   <div class="pic">
+                   <input type="file" id="file1"  name="editPicture" style="display:block" />
+                   </div>
+
+               </div>
+                <div class="right">
+                <div class="bDate">Select a country
+                    <select class="col-xs-4 " id="country" name="country">
+                        <option th:each="country: ${countries}"
+                                th:value="${country.id}"
+                                th:text="${country.name}"/>
+                    </select>
+                </div>
+                    <div class="bDate"><span class="it">at (Local time)</span>
+                    <input type="time" class="date" name="startTime" placeholder="HH-mm" required>
+                </div>
+                    <div class="bDate"><span class="it">at (Local time)</span>
                 <input type="time" class="date" name="endTime" placeholder="HH-mm" required>
             </div>
-            <div class="bDate">Select a country
-            <select class="col-xs-4 " id="country" name="country">
-                <option th:each="country: ${countries}"
-                        th:value="${country.id}"
-                        th:text="${country.name}"/>
-            </select>
-            </div>
-            <input type="file" id="file1"  name="editPicture" style="display:block" />
-            <button>submit</button>
-
+                    <div class="linkTo"> Festicket URL
+                        <span th:text="${urlError}" style="color: red; font-style: italic"></span>
+                        <input type="text"  name="ticketUrl" placeholder="Festicket URL"/>
+                    </div>
+                    <div class="subBtn">
+            <button>submit</button></div>
+                </div>
         </div>
-    </form>
-
+        </form>
     </div>
-
+</div>
 
 
 
