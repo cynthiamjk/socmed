@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="userPage.css">
+    <link rel="stylesheet" type="text/css" href="userSettings.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <script type="text/javascript" src="signup.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-grey">
+    <ul class="navbar-nav">
+
+        <li class="nav-item">
+            <span th:if="${user.username != null}"><a th:href="@{/logout}" >Log out</a></span>
+        </li>
+        <li class="nav-item">
+            <span th:if="${user.username != null}"><a th:href="@{/userSettings}">Settings</a></span>
+        </li>
+        <li class="nav-item">
+            <span th:if="${user.username != null}"><a th:href="@{/addEvent}">New event</a></span>
+        </li>
+        <li>
+            <div class="userSearch">Search user
+                <form  th:action="@{/searchUser}" method="POST">
+                    <input type="test" name="username" id="search" th:value="${username}"/>
+                    <input class="btn" type="submit" value="Go"/>
+                </form>
+            </div>
+        <li class="nav-item">
+            <span th:if="${user.username != null and user.role == T(com.cynthia.socmed.models.Role).ADMIN}"><a th:href="@{/adminPage}" >Admin Page</a></span>
+        </li>
+
+    </ul>
+</nav>
+
+<br>
+
+
+<div class="fl"> User found
+
+   <form th:action="@{/addFriend}" method="post">
+       <input type="hidden" name="username" th:value="${username}"><span th:text="${username}"></span>
+      <span th:if="!${#lists.contains(friendsName, '__${username}__') }"><button value="sendFriendRequest", name="action"  >add friend</button></span>
+   </form>
+      <input type="hidden" name="username" th:value="${username}" >
+       <span th:if="${#lists.contains(friendsName, '__${username}__') }">Yayyy you two are friends!<button >see profile</button></span>
+    <form th:action="@{/removeFriend}" method="post">
+       <input type="hidden" name="username" th:value="${username}" >
+       <span th:if="${#lists.contains(friendsName, '__${username}__') }">You two didn't get along? :(<button value="removeFriend", name="action">remove friend</button></span>
+
+   </form>
+
+
+
+</div>
+
+
+</body>
+</html>

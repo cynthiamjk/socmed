@@ -5,5 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface CountryDao extends CrudRepository<Country, Integer> {
 
+        public Country findByName(String name);
 
 }

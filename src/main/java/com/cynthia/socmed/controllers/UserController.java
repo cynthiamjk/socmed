@@ -1,90 +1,108 @@
 package com.cynthia.socmed.controllers;
 
-import com.cynthia.socmed.DAO.*;
-import com.cynthia.socmed.misc.PostTimeComparator;
+import com.cynthia.socmed.DAO.EmojisDao;
+import com.cynthia.socmed.comp.UserValidator;
 import com.cynthia.socmed.models.*;
-
-
+import com.cynthia.socmed.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.parameters.P;
+import org.springframework.http.MediaType;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.*;
-import java.util.stream.IntStream;
+import java.util.List;
 
 @Controller
 @SessionAttributes("user")
-
-
 public class UserController {
 
     @Autowired
-    UserDao userDao;
+    PostService postService;
 
     @Autowired
-    FriendRequestDao friendRequestDao;
+    CountryService countryService;
 
     @Autowired
-    PostDao postDao;
+    UserService userService;
 
     @Autowired
-    LikesDao likesDao;
+    LikesService likesService;
 
     @Autowired
-    CountryDao countryDao;
+    UserValidator userValidator;
+
+    @Autowired
+    FriendshipService friendshipService;
+
+    @Autowired
+    FriendRequestService friendRequestService;
+
+     @Autowired
+    EmojisDao emojisDao;
+
+
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
-    public String index(HttpServletRequest request, ModelMap model, User u, Integer count) {
-        List<User> friends = u.getFriends();
-        for (User friend : friends) {
-            model.addAttribute("friends", friends);
 
-        }
-        int requestNumber = u.getRequestNumber();
-        model.addAttribute("requestNumber", requestNumber);
-        List<Post> posts = (List<Post>) postDao.findAll();
+    public String index(ModelMap model, User u) throws IOException {
 
+        //helps check if a post is liked by the user, display css on like button
+        List<Post> likedPosts = userService.likedPost(u) ;
+        model.addAttribute("likedPosts", likedPosts);
 
-        List<User> fris = u.getFriends();
-        List<Post> userPosts = new ArrayList<Post>();
-        for ( Post po : posts) {
-            if(po.getAuthor().getUsername().equals(u.getUsername())) {
-                userPosts.add(po);
-            }
+        //add country flag and country name as title to the view
+        model.addAttribute("imagePath", countryService.countryFlag(u));
+        model.addAttribute("countryName", u.getCountry().getName());
 
-        }
-        for (User fri : fris) {
-            for (Post p : postDao.findByAuthor(fri)) {
-                userPosts.add(p);
-            }
-        }
-        Post[] osef = new Post[userPosts.size()];
-        Post[] usersPostsArray = userPosts.toArray(osef);
-        Arrays.sort(usersPostsArray, new PostTimeComparator());
-
+        //display all user and friends' posts in desc order
+        Post [] usersPostsArray =  postService.showAllPosts(u);
         model.addAttribute("userPosts", usersPostsArray);
+
+        List<FriendRequest> received = friendRequestService.findAllByDest(u);
+        model.addAttribute("received", received);
+
+
+        List<User> friends = userService.getFriendship(u);
+        model.addAttribute("friends", friends);
+
+        List <Emojis> emojis = (List<Emojis>) emojisDao.findAll();
+        model.addAttribute("emojis", emojis);
+
+        List<Country> cd = countryService.findAll();
+
+
+
+
+  /*    Document doc = Jsoup.connect("https://apps.timwhitlock.info/emoji/tables/unicode").get();
+        Elements elm = doc.body().select("td.preview span");
+        File myObj = new File("C:\\Users\\CynthiaM\\Desktop\\socmed\\images\\lol.txt");
+        FileWriter myWriter = new FileWriter("lol.txt");
+        myWriter.write(elm.html());
+        myWriter.close();
+
+System.out.println(elm);*/
         return "profile";
     }
 
+
+    @RequestMapping(value = "/addEvent", method = RequestMethod.GET)
+    public String eventForm(ModelMap model, User u) {
+        List<Country> countries = countryService.findAll();
+        model.addAttribute("countries", countries);
+        if (u.getId() == 0) {
+            return "redirect:/";
+        }
+        return "addEvent";
+    }
+
     @RequestMapping(value = "/adminPage", method = RequestMethod.GET)
-    public String admin(ModelMap model, User u) {
+    public String admin(User u) {
         if (u.getId() == 0 || u.getId() != 1) {
             return "redirect:/";
         }
@@ -93,6 +111,9 @@ public class UserController {
 
     @RequestMapping(value = "/userSettings", method = RequestMethod.GET)
     public String settings(ModelMap model, User u) {
+        List<Country> countries = countryService.countries();
+        model.addAttribute("countries", countries);
+
         if (u.getId() == 0) {
             return "redirect:/";
         }
@@ -103,201 +124,175 @@ public class UserController {
     @RequestMapping(value = "/friendsProfile", method = RequestMethod.GET)
     public String fProfile( @RequestParam(value="item", required =false) String username,
                             ModelMap model, User u) {
+        User item = userService.findByUsername(username);
+        if (friendshipService.areFriends(item,u)) {
+            model.addAttribute("item", item);
+            List<Post> likedPosts = userService.likedPost(u);
+            model.addAttribute("likedPosts", likedPosts);
+            model.addAttribute("imagePath", countryService.countryFlag(item));
+            model.addAttribute("countryName", item.getCountry().getName());
+            model.addAttribute("userPosts", postService.showFriendsPosts(item));
+            return "friendsProfile";
+        } else {
 
-        model.addAttribute("item", userDao.findByUsername(username));
-        User friend = userDao.findByUsername(username);
-        System.out.println(friend.getUsername());
-
-        return "friendsProfile";
-    }
-
-    @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String editForm(ModelMap model, @Valid User u) {
-        userDao.save(u);
-        return "userSettings";
-
-    }
-    //add countries to database
-    @RequestMapping(value = "/addCountries", method = RequestMethod.POST)
-    public String addCountries(ModelMap model) {
-        String line = "";
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("C:/Users/CynthiaM/Desktop/socmed/src/main/resources/static/countriesOk.txt"));
-
-            while ((line =br.readLine()) != null) {
-                Country c = new Country ();
-                c.setName(line);
-                countryDao.save(c);
-            }
-        }catch (FileNotFoundException e){
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            return "redirect:profile";
         }
-
-        model.addAttribute("successMessage", "Countries have been successfully added to your database");
-        return "adminPage";
     }
+
+    @RequestMapping(value = "/updateUsername", method = RequestMethod.POST)
+    public String updateUser(@RequestParam(value="username", required = false) String username,
+                             User u, RedirectAttributesModelMap redirectAttributesModelMap, BindingResult bindingResult) {
+        userValidator.validateEditUsername(u, bindingResult);
+        if(bindingResult.hasErrors()){
+            redirectAttributesModelMap.addFlashAttribute("usernameE", bindingResult.getFieldError().getDefaultMessage());
+        } else {
+            userService.save(u);
+            redirectAttributesModelMap.addFlashAttribute("update", "Updated successfully");
+        }
+        return "redirect:userSettings";
+    }
+
+    @RequestMapping(value = "/updateEmail", method = RequestMethod.POST)
+    public String updateEmail(@RequestParam(value="email", required = false) String email,
+                              User u, RedirectAttributesModelMap redirectAttributesModelMap, BindingResult bindingResult) {
+        userValidator.validateEditEmail(u, bindingResult);
+        if(bindingResult.hasErrors()){
+            redirectAttributesModelMap.addFlashAttribute("email", bindingResult.getFieldError().getDefaultMessage());
+        } else {
+            userService.save(u);
+            redirectAttributesModelMap.addFlashAttribute("updateEmail", "Updated successfully");
+        }
+        return "redirect:userSettings";
+    }
+
+    @RequestMapping(value = "/updateCountry", method = RequestMethod.POST)
+    public String editForm(@RequestParam(value="countries", required = false) String country,
+                           ModelMap model, User user,RedirectAttributesModelMap redirectAttributesModelMap) {
+        List<Country> countries = countryService.countries();
+        model.addAttribute("countries", countries);
+        Country userCountry = countryService.findByName(country);
+        userService.updateUserCountry(userCountry,user);
+        redirectAttributesModelMap.addFlashAttribute("country", "Country updated!");
+        return "redirect:userSettings";
+
+    }
+
+    @RequestMapping(value = "/editPicture", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public String editPicture(@RequestParam(value="editPicture", required = false) MultipartFile editPicture,
+                              User user, RedirectAttributesModelMap redirectAttributesModelMap) throws IOException {
+
+        userService.editProfilePicture(editPicture, user);
+        redirectAttributesModelMap.addFlashAttribute("picture", "Picture updated!");
+        return "redirect:userSettings";
+
+
+    }
+
+
 
     @RequestMapping(value = "/privacy", method = RequestMethod.POST)
-    public String privacySettings(ModelMap model, User u) {
-        userDao.save(u);
-        return "userSettings";
+    public String privacySettings(User u, RedirectAttributesModelMap redirectAttributesModelMap) {
+        userService.save(u);
+        redirectAttributesModelMap.addFlashAttribute("privacy", "Privacy settings updated!");
+        return "redirect:userSettings";
     }
 
 
-    @RequestMapping(value = "/passwordChange", method = RequestMethod.GET)
-    public String pwForm(ModelMap model) {
-        return "passwordChange";
-    }
 
     @RequestMapping(value = "passwordChange", method = RequestMethod.POST)
     public String pwChange(
-            @RequestParam(name = "oldPassword", required = true) String oldPassword,
-            @RequestParam(name = "newPassword", required = true) String newPassword,
-            @RequestParam(name = "passwordc", required = true, defaultValue = "") String passwordc,
-            ModelMap modelMap,
-            User u) {
-        System.out.println("salut");
+            @RequestParam(name = "oldPassword") String oldPassword,
+            @RequestParam(name = "newPassword") String newPassword,
+            @RequestParam(name = "passwordc", defaultValue = "") String passwordc,
+            User u, RedirectAttributesModelMap redirectAttributesModelMap) {
+
         if (u.getPassword().endsWith(BCrypt.hashpw(oldPassword, u.getSalt()))
                 && (!newPassword.isEmpty()) && newPassword.equals(passwordc)) {
-            System.out.println("pw changed ");
-            String salt = BCrypt.gensalt();
-            u.setSalt(salt);
-            u.setPassword(BCrypt.hashpw(newPassword, salt));
-            u = userDao.save(u);
-            System.out.println("pw changed success");
-        }
+            userService.passwordReset(u, oldPassword, newPassword, passwordc);
+            redirectAttributesModelMap.addFlashAttribute("password", "Password successfully changed");
 
-        return "userSettings";
+        } else {
+            redirectAttributesModelMap.addFlashAttribute("err", "Incorrect password or password length");
+
+        }
+        return "redirect:userSettings";
+    }
+
+    @RequestMapping(value = "/deleteAccount", method = RequestMethod.POST)
+    public String deleteAccount(User u, RedirectAttributesModelMap redirectAttributesModelMap) {
+        userService.delete(u);
+        redirectAttributesModelMap.addFlashAttribute("delete", "Your account have been successfully deleted, farewell!");
+        return "redirect:/";
     }
 
 
     @RequestMapping(value = "/blocklist", method = RequestMethod.GET)
     public String blocklist(ModelMap model) {
 
-        return "userSettings";
+        return "redirect:userSettings";
     }
 
-    @RequestMapping(value = "/searchUser", method = RequestMethod.GET)
-    public String showUserByName(@RequestParam(value = "search", required = false) String username, Model model, User u) {
-        model.addAttribute("search", userDao.findByUsername(username));
-        List<User> friends = u.getFriends();
-        List<String> fName = new ArrayList<>();
-        for (User friend : friends) {
-            fName.add(friend.getUsername());
-
+    @RequestMapping(value = "/searchUser", method = RequestMethod.POST)
+    public String findUser(@RequestParam(value = "search", required = false) String username, Model model, User u,
+                           RedirectAttributesModelMap redirectAttributesModelMap) {
+        if (!username.matches("[\\w*\\s*]*")) {
+            redirectAttributesModelMap.addFlashAttribute("errSearchUser", "We couldn't find what you were looking for");
+            return "redirect:profile";
         }
-
-        model.addAttribute("fName", fName);
-        return "searchUser";
+        if (userService.existsByUsername(username)) {
+            List<User> friends = userService.getFriendship(u);
+            List <String> friendsName =userService.friendsNames(friends);
+            model.addAttribute("friendsName", friendsName);
+            model.addAttribute("friends", friends);
+            model.addAttribute("username", username);
+            return "userList";
+        }
+        redirectAttributesModelMap.addFlashAttribute("errSearchUser", "We couldn't find what you were looking for");
+        return "redirect:profile";
     }
 
 
     @RequestMapping(value = "/addFriend", method = RequestMethod.POST)
     public String addFriend(
-            @RequestParam(value = "search", required = false) String username,
-            @RequestParam(name="action", defaultValue = "") String action,
+            @RequestParam(value = "username", required = false) String username,
             Model model) {
+
         User sender = (User) model.getAttribute("user");
-        assert sender != null;
-        List<User> friends = sender.getFriends();
-        List<FriendRequest> frs = (List<FriendRequest>) friendRequestDao.findAll();
-        List<Integer> dests = friendRequestDao.findFL(sender);
-        User dest = userDao.findByUsername(username);
-        int destId = dest.getId();
-        int rn = dest.getRequestNumber();
-        rn = rn + 1;
-        // check if sender != from dest of friendrequest
-        switch (action) {
-            case "sendFriendRequest":
-                if (destId != sender.getId()) {
-                    // check if a friendRequest hasnt been sent to this user yet
-                    if (!dests.contains(destId)) {
-                        //check if both arent friends already
-                        if (!friends.contains(dest)) {
-                            FriendRequest fr = new FriendRequest();
-                            fr.setSender(sender);
-                            fr.setDest(dest);
-                            fr.setSent(true);
-                            fr.setAccepted(false);
-                            dest.getReceived().add(fr);
-                            friendRequestDao.save(fr);
-                            dest.setRequestNumber(rn);
-                            userDao.save(sender);
-
-
-                            //  return "profile";
-                        }
-                    }
-
-                }
-                break;
-            default:
-                System.out.println("salut");
-
-        }
+        friendRequestService.createFriendRequest(sender, username);
         return "redirect:profile";
 
+
     }
+
+    @RequestMapping(value = "/removeFriend", method = RequestMethod.POST)
+    public String rmFr(  @RequestParam(value = "username", required = false) String username,
+                         ModelMap model) {
+        User currentUser = (User) model.getAttribute("user");
+        userService.removeFriend(currentUser, userService.findByUsername(username));
+        return "redirect:profile";
+    }
+
     @RequestMapping(value = "/friendRequests", method = RequestMethod.GET)
     public String showFrs(ModelMap modelMap, User u) {
-        List<Integer> is = userDao.findReceived(u.getId());
-        List<FriendRequest>frs = new ArrayList<FriendRequest>();
-        for( int fr: is) {
-            frs.add(friendRequestDao.findById(fr));
-            modelMap.addAttribute("frs", frs);
-
-        }
+        List<FriendRequest> frs = friendRequestService.findAllByDest(u);
+        modelMap.addAttribute("frs", frs);
         return "friendRequests";
     }
 
     @RequestMapping(value = "/friendRequests", method = RequestMethod.POST)
-    public String acceptFrs(
-
-            @RequestParam(name="action", defaultValue = "") String action,
-            ModelMap modelMap, FriendRequest fr,   int id) {
+    public String acceptFrs(@RequestParam(name = "action", defaultValue = "") String action,
+                            ModelMap modelMap, int id) {
 
         User dest = (User) modelMap.getAttribute("user");
-        System.out.println(fr.getId());
-
-        int rn = dest.getRequestNumber();
-        rn = rn - 1;
-
+        FriendRequest fr = friendRequestService.findById(id);
+        User sender = fr.getSender();
 
         switch (action) {
-            case "acceptFr":
-                fr = friendRequestDao.findById(id);
-                User sender = fr.getSender();
-                System.out.println(sender.getUsername() + "  " + dest.getUsername());
-                dest.getFriends().add(sender);
-                sender.getFriends().add(dest);
-                //fr.setAccepted(true);
-                //fr.setSent(false);
-                dest.setRequestNumber(rn);
-                userDao.save(dest);
-                userDao.deleteFr(fr.getId());
-                friendRequestDao.deleteById(fr.getId());
-
+            case "acceptFr": friendRequestService.deleteFriendrequest(fr, dest);
+                friendshipService.addFriendship(dest, sender);
                 break;
-
             default:
-                fr = friendRequestDao.findById(id);
-                fr.setDeleted(true);
-                fr.setAccepted(false);
-                dest.getReceived().remove(fr);
-                dest.setRequestNumber(rn);
-                userDao.save(dest);
-                userDao.deleteFr(fr.getId());
-                friendRequestDao.deleteById(fr.getId());
-        }
-
-        List<Integer> is = userDao.findReceived(dest.getId());
-        List<FriendRequest>frs = new ArrayList<FriendRequest>();
-        for( int f: is) {
-            frs.add(friendRequestDao.findById(f));
-            modelMap.addAttribute("frs", frs);
-
+                friendRequestService.deleteFriendrequest(fr, dest);
         }
         return "friendRequests";
     }
@@ -305,65 +300,86 @@ public class UserController {
 
 
     @RequestMapping(value = "/postStuff", method = RequestMethod.POST)
-    public String postStuff(@RequestParam(name="uPost", defaultValue = "")String uPost,
-                            Model model, LocalDate locaDate, User u) {
+    public String postStuff(@RequestParam(name = "uPost", defaultValue = "") String uPost,
+                            @RequestParam(value="file1", required = false) MultipartFile picture,
+                            Model model, User u, RedirectAttributesModelMap redirectAttributesModelMap) throws IOException {
+        Post p =  postService.generatePost(uPost, u.getUsername());
+        if(!picture.isEmpty()) {
+            postService.addPostPicture(picture, p);
+        }
+        if (postService.postExists(p) == false) {
+            redirectAttributesModelMap.addFlashAttribute("emptyPost", "Can't submit an empty post");
+            return "redirect:profile";
+        } else {
+            postService.save(p);
+            model.addAttribute("uPost", uPost);
+            return "redirect:profile";
+        }
+    }
 
-        locaDate = LocalDate.now();
-        Post p = new Post();
-        p.setText(uPost);
-        p.setAuthor(u);
-        p.setDate(locaDate);
-        userDao.save(u);
-        postDao.save(p);
 
+    @RequestMapping(value="/like", method = RequestMethod.POST)
+    public String likePost(@RequestParam(name="id") int id,
+                           ModelMap modelMap) {
+        User u = (User) modelMap.getAttribute("user");
+        List<Likes> likedPosts = postService.likePosts(id, u);
+        modelMap.addAttribute("likedPost", likedPosts);
 
         return "redirect:profile";
     }
 
-    @RequestMapping(value="/likeOrShare", method = RequestMethod.POST)
-    public String likeOrShare(@RequestParam(name="id") int id,
-                              ModelMap modelMap) {
+
+    @RequestMapping(path = "/deletePost", method = RequestMethod.GET)
+    public String deletePostWithModal(@RequestParam(name="id1") int postId,
+                                      @RequestParam(name="author1") String author,
+                                      ModelMap modelMap) {
         User u = (User) modelMap.getAttribute("user");
-
-        Post p = postDao.findById(id);
-        int likes = p.getLikes();
-        int addLikes = likes + 1;
-        int suppLikes = likes - 1;
-
-        List<Likes> ls = (List<Likes>) likesDao.findAll();
-        List <Likes> userLikes = new ArrayList<>();
-        for ( Likes lls : ls) {
-            if(lls.getUser().getId() == u.getId())
-                userLikes.add(lls);
-        }
-        if(!userLikes.isEmpty()) {
-            for (Likes lks : userLikes) {
-                if (lks.getPost().getId() == p.getId()) {
-                    p.setLikes(suppLikes);
-                    likesDao.deleteById(lks.getId());
-                } else {
-                    Likes l = new Likes();
-                    l.setPost(p);
-                    l.setUser(u);
-                    p.setLikes(addLikes);
-                    likesDao.save(l);
-
-                }
+        Post p = postService.findById(postId);
+        postService.deletePost(p, u, author);
+        return "redirect:profile";
+    }
+    @RequestMapping(path = "/findPostToDelete/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public Post findPostToDelete(@PathVariable("id") int postId) {
+        Post p =postService.findById(postId);
+        List <Likes> likes = (List<Likes>) likesService.findAllByPost(p);
+        if(!likes.isEmpty()) {
+            for (Likes l : likes) {
+                likesService.delete(l);
             }
         }
-        else {
-            Likes l = new Likes();
-            l.setPost(p);
-            l.setUser(u);
-            p.setLikes(addLikes);
-            likesDao.save(l);
-
+        if (p.getLinkPreview() != null) {
+            p.setLinkPreview(null);
         }
 
+        return p;
+    }
 
+
+
+    @RequestMapping(value = "/updatePost", method = RequestMethod.POST)
+    public String updatePostWithModal(@RequestParam(name="id", required = false) int id,
+                                      @RequestParam(name = "text", defaultValue = "") String text,
+                                      @RequestParam(name = "defaultText", defaultValue = "") String defaultText,
+                                      ModelMap modelMap) {
+
+        User u = (User) modelMap.getAttribute("user");
+        Post p = postService.findById(id);
+        postService.updatePost(u.getUsername(), p, text);
+        if(postService.postExists(p) == false) {
+            p.setText(defaultText);
+        }
+        postService.save(p);
         return "redirect:profile";
     }
+
+    @RequestMapping(path = "/findPost/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public Post findPost(@PathVariable("id") int postId) {
+        return postService.findById(postId);
+    }
 }
+
 
 
 

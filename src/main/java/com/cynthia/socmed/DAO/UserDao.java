@@ -1,8 +1,6 @@
 package com.cynthia.socmed.DAO;
 
 import com.cynthia.socmed.models.FriendRequest;
-import com.cynthia.socmed.models.Post;
-import com.cynthia.socmed.models.Role;
 import com.cynthia.socmed.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -20,38 +18,33 @@ public interface UserDao extends JpaRepository<User, Integer> {
 
         public User findByUsername (String username);
 
-        //public List<User> findByUsername(String username);
 
         public User findByEmail (String email);
 
+
+   public User findByResetToken(String resetToken);
+
+
+
         public boolean existsByUsername (String username);
 
-        public long count();
+    public boolean existsByEmail(String email);
 
-    public List<User> findAllByOrderByIdDesc();
+    public boolean existsByResetToken(String resetToken);
 
 
-    @Transactional
-    @Modifying
-    @Query("UPDATE User u SET u.role=?1 WHERE u.id = ?2")
-    int updateRole(@Param("role") Role role, @Param("id") int id);
+
+       public long count();
 
 
 
 
-    @Transactional
-    @Modifying
-    @Query(value ="delete FROM user_received where received_id =?1", nativeQuery = true)
-    void deleteFr(@Param("received") int received);
-
-    @Transactional
+  /*  @Transactional
     @Modifying
     @Query(value = "SELECT received_id FROM user_received WHERE  user_id=?1", nativeQuery = true)
-    List<Integer> findReceived(@Param("user_id") int userId);
+    List<Integer> findReceived(@Param("user_id") int userId);*/
 
-    @Transactional
-    @Modifying
-    @Query(value = "SELECT liked_posts_id FROM user_liked_posts WHERE  user_id=?1", nativeQuery = true)
-    List<Integer> findLiked(@Param("user_id") int userId);
+
+
 
 }

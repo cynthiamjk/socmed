@@ -16,14 +16,15 @@ public interface FriendRequestDao  extends CrudRepository<FriendRequest, Integer
 
    public FriendRequest findById(int id);
 
-
     public FriendRequest findBySender(int id);
 
+    public FriendRequest findBySender(String s);
 
-   @Transactional
-    @Modifying
-    @Query("SELECT sender.id FROM FriendRequest WHERE dest =?1")
-    List<Integer> findDestFL(@Param("dest") User dest);
+   public List<FriendRequest> findAllByDest(User dest);
+
+   public FriendRequest save(FriendRequest friendRequest);
+
+   public void delete(FriendRequest friendRequest);
 
 
 
@@ -32,20 +33,6 @@ public interface FriendRequestDao  extends CrudRepository<FriendRequest, Integer
     @Query("SELECT dest.id FROM FriendRequest WHERE sender =?1")
     List<Integer> findFL(@Param("sender") User sender);
 
- @Transactional
- @Modifying
- @Query("SELECT id FROM FriendRequest WHERE sender =?1 and dest=?2")
- List<Integer> findFL2(@Param("sender") User sender, @Param("dest") User dest);
-
- @Transactional
- @Modifying
- @Query("SELECT id FROM FriendRequest WHERE  dest=?2")
- List<Integer> findReceived(@Param("dest") User dest);
-
- @Transactional
- @Modifying
- @Query(value ="delete FROM friend_request where id =?1", nativeQuery = true)
- void deleteFrs(@Param("id") int id);
 
 
 }

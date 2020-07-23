@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="book.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <script type="text/javascript" src="signup.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+
+
+
+<nav class="navbar navbar-expand-sm bg-grey">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            INSERT LOGO HERE
+        </li>
+    </ul>
+</nav>
+
+<span th:text="${attr}" style="color: #00ff55; font-size: 18px; font-style: italic">
+</span>
+<span th:text="${okSignUp}" style="color: #00ff55; font-size: 18px; font-style: italic">
+</span>
+<span th:text="${delete}" style="color: #00ff55; font-size: 18px; font-style: italic">
+</span>
+
+<div class="container">
+    <div class="eventContainer">
+        <div class="title"><h4>Upcoming events</h4></div>
+        <div class="eventShow">
+        <th:block th:each="item : ${events}">
+            <div class="eventBlocks">
+                <div class="top">
+                <div class="eventName">
+                    <span th:if="${item.name != null}"> <div class="name"><span th:text="${item.name}"></span></div></span></div>
+                <div class="eventLoc">
+                   <div class="location" ><span th:text="${item.location.name}"></span></div><div class="zzz"><img th:src="${item.location.icon}"  style="width: 30px;height: 30px; float: right"></div>
+                </div>
+            <!--  <span th:if="${attendees != null}"> <div class="attendees"><span th:text="${attendees}"></span></div></span>-->
+            </div>
+                <div class="eventContent">
+                    <div class ="evPic">
+                <span th:if="${item.eventPicture != null}"> <div class="eventPic"><img th:src="${item.picturePath}" style="max-width: 230px ;height: 150px"></div></span></span>
+                    <span th:unless="${item.eventPicture != null}">
+                        <div class="eventPic"><img src="defaultPicture.jpg" style="max-width: 230px ;height: 150px"></div></span></div>
+                    <div class="eventMisc">
+                        <div class="misc">participants</div>
+                        <div class="misc"><a class="fas fa-ticket-alt"></a></div>
+                        <div class="misc"><a class="fas fa-globe"></a></div>
+                    </div>
+                </div>
+                <div class="bot">
+                    <div class="date">From</div><div class="start"><span th:text="${item.startDate}"></span></br><span th:text="${item.timeStart}"></span> l.t</div>
+                    <div class="date">To</div><div class="start"><span th:text="${item.endDate}"></span></br><span th:text="${item.timeEnd}"></span> l.t</div>                </div>
+
+            </div>
+        </th:block>
+        <span th:text="${NoEventsMess}"></span>
+        </div>
+    </div>
+    <div class="userInfo">
+        <div id="login" class="log">
+            <div class="title">
+                <h4>Login</h4></div>
+            <span th:text="${error}" style="color: red; font-style: italic"></span>
+            <form th:action="@{/login}" modelAttribute="loginForm" th:object="${user}" method="post">
+
+                <div class="row">
+                    <div class=" col-xs-4 " >
+                        <input type="email" name="email" class="email form-control"  placeholder="Email" required/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-xs-4 " >
+                        <input type="password" name="password" class="password form-control" placeholder="Password" required/>
+                    </div>
+                </div>
+                Remember Me:  <input type="checkbox" name="remember-me" />
+                <div class="loginbtn">
+                    <input class="btn login" type="submit" value="Login" />
+                </div>
+                <div class="forgotpw"><a th:href="@{/forgotPassword}">Forgot your password?</a></div>
+                <!--link to forgotten pw page-->
+            </form>
+        </div>
+
+
+        <div id="signup" class="log">
+            <div class="title">
+                <h4>SignUp</h4>
+            </div>
+            <span th:text="${err}" style="color: red; font-style: italic"></span>
+            <form th:action="@{/signup}" modelAttribute="userForm"  method="post">
+                <div class="row"><span th:text="${pwError}"></span>
+                    <div class=" col-xs-4 " >
+                        <input type="email" name="email" id="email" class="email form-control"   placeholder="Email" />
+                    </div>
+                    <div class="loginError"></div>
+                </div>
+                <div class="row">
+                    <div class=" col-xs-4 " >
+                        <input type="text" name="username" id="username" class="username form-control"   placeholder="Username"/>
+                    </div>
+                    <div class="loginError"></div>
+                </div>
+                <div class="row">
+                    <div class=" col-xs-4 " >
+                        <input id="pw" type="password" name="password" class="password form-control" placeholder="Password" onblur="rmMessOnBlur()" onfocus="addMessOnFocus()" onkeyup="lengthValidation()"/>
+                    </div>
+                </div>
+
+                <span class="help-block">8 characters minimum</span>
+                <span id="message">
+          <p id="length" class="invalid" style="color: red" >Password must be at least 8 characters</b></p>
+        </span></p>
+
+                <div class="row">
+                    <div class=" col-xs-4 " >
+                        <input type="password" name="passwordc" class="password form-control" placeholder="Confirm your password" required/>
+                    </div>
+                    <div class="loginError"></div>
+                </div>
+                <div class="bDate">Select a country
+                    <select class="col-xs-4 " id="country" name="country">
+                        <option th:each="country: ${countries}"
+                                th:value="${country.id}"
+                                th:text="${country.name}"/>
+                    </select>
+                </div>
+                <div class="bDate">Birthdate
+                    <input type="date" class="birthdate" name="birthdate" placeholder="Birthdate" required>
+
+                </div>
+                <div class="loginError"></div>
+                <p class="policyAgreement"> By clicking on "Sign up", you agree to our Terms and that you have read our <a href="#"> Data use policy</a> including our  <a href="#">Cookie Use</a>.</p>
+                <div class="signupbtn">
+                    <input class="btn login" id ="loginbtn" type="submit" onclick="errorForm()" value="Sign up" />
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+    </div>
+</div>
+</div>
+<script>
+//removes password length error message onload
+window.onload = function() {
+document.getElementById("message").style.display = "none";
+}
+</script>
+
+<script>
+function errorForm() {
+var x = document.getElementById("login");
+if (x.style.display === "none") {
+
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>

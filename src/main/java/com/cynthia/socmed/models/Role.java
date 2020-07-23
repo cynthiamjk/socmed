@@ -5,7 +5,8 @@ public enum Role {
 
         ADMIN,
         MOD,
-        VISITOR,
+    VISITOR,
+        USER,
 
     }
 

@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bf790852-21b8-43a8-9a12-5dc96f45848f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/183.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/184.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/185.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/6245.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/6247.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/6249.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/aaa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/bbb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/qqq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lol.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/EmojisDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/EventDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/FriendshipDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/LinkPreviewDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/ResourceWebConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/ApplicationStartup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/EventTimeComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/FileConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/PostMediaPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/UserValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/EventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Authority.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/AuthorityType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Emojis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Friendship.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/LinkPreview.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/RecaptchaUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/SocmedUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/CountryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/EmailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/EventService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/FileConverterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/FriendRequestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/FriendshipService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/LikesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/PostService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/RecaptchaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/defaultPicture.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/abkhazia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/afghanistan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/aland-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/albania.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/algeria.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/american-samoa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/andorra.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/angola.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/anguilla.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/antigua-and-barbuda.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/argentina.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/armenia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/aruba.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/australia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/austria.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/azerbaijan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/azores-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/bahamas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/bahrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/balearic-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/bangladesh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/barbados.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/basque-country.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/belarus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/belgium.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/belize.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/benin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/bermuda.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/bhutan-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/bhutan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/bolivia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/bonaire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/bosnia-and-herzegovina.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/botswana.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/brazil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/british-columbia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/british-indian-ocean-territory.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/british-virgin-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/brunei.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/bulgaria.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/burkina-faso.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/burundi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/cambodia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/cameroon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/canada.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/canary-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/cape-verde.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/cayman-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/central-african-republic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/ceuta.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/chad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/chile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/china.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/christmas-island.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/cocos-island.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/colombia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/comoros.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/cook-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/corsica.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/costa-rica.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/croatia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/cuba.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/curacao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/cyprus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/czech-republic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/democratic-republic-of-congo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/denmark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/djibouti.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/dominica.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/dominican-republic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/east-timor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/ecuador.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/egypt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/england.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/equatorial-guinea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/eritrea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/estonia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/ethiopia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/european-union.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/falkland-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/faroe-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/fiji.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/finland.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/france.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/french-polynesia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/gabon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/galapagos-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/gambia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/georgia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/germany.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/ghana.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/gibraltar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/greece.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/greenland.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/grenada.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/guam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/guatemala.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/guernsey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/guinea-bissau.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/guinea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/guyana.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/haiti.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/hawaii.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/honduras.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/hong-kong.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/hungary.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/iceland.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/india.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/indonesia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/iran.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/iraq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/ireland.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/isle-of-man.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/israel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/italy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/ivory-coast.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/jamaica.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/japan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/jersey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/jordan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/kazakhstan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/kenya.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/kiribati.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/kosovo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/kuwait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/kyrgyzstan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/laos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/latvia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/lebanon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/lesotho.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/liberia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/libya.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/liechtenstein.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/lithuania.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/luxembourg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/macao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/madagascar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/madeira.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/malawi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/malaysia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/maldives.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/mali.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/malta.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/marshall-island.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/martinique.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/mauritania.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/mauritius.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/melilla.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/mexico.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/micronesia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/moldova.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/monaco.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/mongolia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/montenegro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/montserrat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/morocco.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/mozambique.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/myanmar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/namibia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/nato.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/nauru.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/nepal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/netherlands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/new-zealand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/nicaragua.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/niger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/nigeria.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/niue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/norfolk-island.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/north-korea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/northen-cyprus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/northern-marianas-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/norway.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/oman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/orkney-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/ossetia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/pakistan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/palau.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/palestine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/panama.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/papua-new-guinea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/paraguay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/peru.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/philippines.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/pitcairn-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/portugal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/puerto-rico.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/qatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/rapa-nui.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/republic-of-macedonia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/republic-of-poland.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/republic-of-the-congo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/romania.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/russia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/rwanda.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/saba-island.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/saint-kitts-and-nevis.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/salvador.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/samoa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/san-marino.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/sao-tome-and-principe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/sardinia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/saudi-arabia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/scotland.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/senegal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/serbia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/seychelles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/sierra-leone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/singapore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/sint-eustatius.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/sint-maarten.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/slovakia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/slovenia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/solomon-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/somalia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/somaliland.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/south-africa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/south-korea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/south-sudan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/spain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/sri-lanka.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/st-barts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/st-lucia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/st-vincent-and-the-grenadines.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/sudan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/suriname.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/swaziland.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/sweden.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/switzerland.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/syria.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/taiwan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/tajikistan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/tanzania.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/thailand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/tibet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/togo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/tokelau.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/tonga.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/transnistria.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/trinidad-and-tobago.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/tunisia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/turkey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/turkmenistan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/turks-and-caicos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/tuvalu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/uganda.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/ukraine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/united-arab-emirates.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/united-kingdom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/united-nations.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/united-states-of-america.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/uruguay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/uzbekistn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/vanuatu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/vatican-city.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/venezuela.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/vietnam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/virgin-islands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/wales.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/western-sahara.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/yemen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/zambia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/flag/png/zimbabwe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/addEvent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/forgotPassword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/resetPassword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/CountryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/CountryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/FriendRequestDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/FriendRequestDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/LikesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/LikesDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/PostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/PostDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/LogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/LogoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/misc/PostTimeComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/PostTimeComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Friend.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/FriendRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/FriendRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Likes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Likes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Timeline.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/book.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/userPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/userPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/userSettings.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/userSettings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Thumbs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/homePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/errorPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/friendRequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/friendRequests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/friendsProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/friendsProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/passwordChange.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/searchUser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userSettings.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userSettings.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ba2GEPHrufRT76UFJMRPT7ocHh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.55287355" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CynthiaM\Desktop\socmed\src\main\resources\static" />
+      <recent name="C:\Users\CynthiaM\Desktop\socmed\images" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cynthia.socmed.services" />
+      <recent name="com.cynthia.socmed.comp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cynthia.socmed.SocmedApplication" />
+      <module name="socmed" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=8088" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\CynthiaM\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf790852-21b8-43a8-9a12-5dc96f45848f" name="Default Changelist" comment="" />
+      <created>1588855785466</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588855785466</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="440" y="93" key="#Project_Structure" timestamp="1591889516101">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="93" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1591889516101" />
+    <state x="693" y="298" width="526" height="483" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1590222108029">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state x="693" y="298" width="526" height="483" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1590222108029" />
+    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594133828319">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594133828319" />
+    <state x="418" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1591633889793" />
+    <state x="637" y="322" width="638" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594133732492">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="637" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594133732492" />
+    <state x="637" y="345" width="638" height="390" key="#com.intellij.fileTypes.FileTypeChooser/0.28.1920.1024@0.28.1920.1024" timestamp="1591627551108" />
+    <state x="768" y="219" width="565" height="591" key="#com.intellij.ide.util.MemberChooser" timestamp="1595249648238">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="768" y="219" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595249648238" />
+    <state x="768" y="244" width="565" height="591" key="#com.intellij.ide.util.MemberChooser/0.28.1920.1024@0.28.1920.1024" timestamp="1591608504651" />
+    <state x="692" y="324" width="527" height="430" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588855854175">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state x="692" y="324" width="527" height="430" key="#com.intellij.ide.util.TreeClassChooserDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1588855854175" />
+    <state x="640" y="254" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1594822384019">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="254" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594822384019" />
+    <state x="595" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593190044759">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="595" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593190044759" />
+    <state x="693" y="265" width="526" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594501947781">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="693" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594501947781" />
+    <state x="693" y="289" width="526" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1590073448295" />
+    <state x="707" y="227" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1592571558390">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="707" y="227" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1592571558390" />
+    <state x="743" y="274" width="426" height="483" key="FileChooserDialogImpl" timestamp="1595252935498">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="743" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595252935498" />
+    <state x="743" y="298" width="426" height="483" key="FileChooserDialogImpl/0.28.1920.1024@0.28.1920.1024" timestamp="1591280014166" />
+    <state width="1860" height="237" key="GridCell.Tab.0.bottom" timestamp="1595466150598">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595466150598" />
+    <state width="1874" height="231" key="GridCell.Tab.0.bottom/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
+    <state width="1860" height="237" key="GridCell.Tab.0.center" timestamp="1595466150598">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="237" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595466150598" />
+    <state width="1874" height="231" key="GridCell.Tab.0.center/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
+    <state width="1860" height="237" key="GridCell.Tab.0.left" timestamp="1595466150598">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="237" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595466150598" />
+    <state width="1874" height="231" key="GridCell.Tab.0.left/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416932" />
+    <state width="1860" height="237" key="GridCell.Tab.0.right" timestamp="1595466150598">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="237" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595466150598" />
+    <state width="1874" height="231" key="GridCell.Tab.0.right/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
+    <state width="1860" height="326" key="GridCell.Tab.1.bottom" timestamp="1594570073274">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="326" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594570073274" />
+    <state width="1874" height="332" key="GridCell.Tab.1.bottom/0.28.1920.1024@0.28.1920.1024" timestamp="1591628232817" />
+    <state width="1860" height="326" key="GridCell.Tab.1.center" timestamp="1594570073274">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="326" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594570073274" />
+    <state width="1874" height="332" key="GridCell.Tab.1.center/0.28.1920.1024@0.28.1920.1024" timestamp="1591628232817" />
+    <state width="1860" height="326" key="GridCell.Tab.1.left" timestamp="1594570073273">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="326" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594570073273" />
+    <state width="1874" height="332" key="GridCell.Tab.1.left/0.28.1920.1024@0.28.1920.1024" timestamp="1591628232817" />
+    <state width="1860" height="326" key="GridCell.Tab.1.right" timestamp="1594570073274">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="326" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594570073274" />
+    <state width="1874" height="332" key="GridCell.Tab.1.right/0.28.1920.1024@0.28.1920.1024" timestamp="1591628232817" />
+    <state x="490" y="173" key="Maven.ArtifactSearchDialog" timestamp="1593695414236">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="173" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593695414236" />
+    <state x="721" y="162" key="SettingsEditor" timestamp="1595252972535">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="721" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595252972535" />
+    <state width="498" height="454" key="SwitcherDM" timestamp="1594824066831">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="454" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1594824066831" />
+    <state width="498" height="447" key="SwitcherDM/0.28.1920.1024@0.28.1920.1024" timestamp="1588856914436" />
+    <state x="921" y="448" width="591" height="228" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1595252961058">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="921" y="448" width="591" height="228" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1595252961058" />
+    <state x="654" y="167" width="604" height="746" key="refactoring.ChangeSignatureDialog" timestamp="1590584528692">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state x="654" y="167" width="604" height="746" key="refactoring.ChangeSignatureDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1590584528692" />
+    <state x="616" y="235" key="run.anything.popup" timestamp="1594056266322">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="235" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594056266322" />
+    <state x="623" y="229" width="672" height="689" key="search.everywhere.popup" timestamp="1594727013207">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="229" width="672" height="689" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594727013207" />
+    <state x="623" y="253" width="672" height="678" key="search.everywhere.popup/0.28.1920.1024@0.28.1920.1024" timestamp="1591558603505" />
+    <state x="790" y="309" key="svn.repositoryBrowser" timestamp="1592319497430">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="790" y="309" key="svn.repositoryBrowser/0.0.1920.1040@0.0.1920.1040" timestamp="1592319497430" />
+  </component>
+</project>
