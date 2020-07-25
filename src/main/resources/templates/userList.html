@@ -49,15 +49,17 @@
 
    <form th:action="@{/addFriend}" method="post">
        <input type="hidden" name="username" th:value="${username}"><span th:text="${username}"></span>
-      <span th:if="!${#lists.contains(friendsName, '__${username}__') }"><button value="sendFriendRequest", name="action"  >add friend</button></span>
+      <span th:if="${not #lists.contains(friendsName, '__${username}__')and not #strings.equals(username,user.username)}"><button value="sendFriendRequest", name="action"  >add friend</button></span>
+       <span th:unless="${not #lists.contains(friendsName, '__${username}__') }">
+            <form th:action="@{/removeFriend}" method="post">
+       <input type="hidden" name="username" th:value="${username}" >
+                 <button value="removeFriend" name="action">remove friend</button>
+   </form>
+        </span>  
    </form>
       <input type="hidden" name="username" th:value="${username}" >
-       <span th:if="${#lists.contains(friendsName, '__${username}__') }">Yayyy you two are friends!<button >see profile</button></span>
-    <form th:action="@{/removeFriend}" method="post">
-       <input type="hidden" name="username" th:value="${username}" >
-       <span th:if="${#lists.contains(friendsName, '__${username}__') }">You two didn't get along? :(<button value="removeFriend", name="action">remove friend</button></span>
+       <span th:if="${#lists.contains(friendsName, '__${username}__') }"><button >see profile</button></span>
 
-   </form>
 
 
 

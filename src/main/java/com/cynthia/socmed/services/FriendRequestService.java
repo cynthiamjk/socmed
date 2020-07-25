@@ -34,11 +34,13 @@ public class FriendRequestService {
         friendRequestDao.deleteById(fr.getId());
     }
 
+
     public FriendRequest createFriendRequest(User sender,String username) {
         List<Integer> dests = friendRequestDao.findFL(sender);
         User dest = userDao.findByUsername(username);
         List<User> friends = userService.getFriendship(sender);
-        if (sender != dest) {
+
+        if (!sender.getUsername().equals(dest.getUsername())) {
             // check if a friendRequest hasnt been sent to this user yet
             if (!dests.contains(dest.getId())) {
                 //check if both arent friends already

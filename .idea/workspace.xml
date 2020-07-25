@@ -20,29 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf790852-21b8-43a8-9a12-5dc96f45848f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/22.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/EmojiService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/UserValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/CountryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/CountryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/userPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/userPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addEvent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/comp/UserValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/comp/UserValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/EventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/EventController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/CountryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/CountryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/EventService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/EventService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/PostService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/userPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/userPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/addEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addEvent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/LogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/LogoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/FriendRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/FriendRequestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/book.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/book.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,25 +184,25 @@
     </state>
     <state x="743" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595676890044" />
     <state x="743" y="298" width="426" height="483" key="FileChooserDialogImpl/0.28.1920.1024@0.28.1920.1024" timestamp="1591280014166" />
-    <state width="1860" height="205" key="GridCell.Tab.0.bottom" timestamp="1595683237763">
+    <state width="1860" height="205" key="GridCell.Tab.0.bottom" timestamp="1595692370092">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595683237763" />
+    <state width="1860" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595692370092" />
     <state width="1874" height="231" key="GridCell.Tab.0.bottom/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
-    <state width="1860" height="205" key="GridCell.Tab.0.center" timestamp="1595683237762">
+    <state width="1860" height="205" key="GridCell.Tab.0.center" timestamp="1595692370092">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595683237762" />
+    <state width="1860" height="205" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595692370092" />
     <state width="1874" height="231" key="GridCell.Tab.0.center/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
-    <state width="1860" height="205" key="GridCell.Tab.0.left" timestamp="1595683237762">
+    <state width="1860" height="205" key="GridCell.Tab.0.left" timestamp="1595692370092">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595683237762" />
+    <state width="1860" height="205" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595692370092" />
     <state width="1874" height="231" key="GridCell.Tab.0.left/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416932" />
-    <state width="1860" height="205" key="GridCell.Tab.0.right" timestamp="1595683237763">
+    <state width="1860" height="205" key="GridCell.Tab.0.right" timestamp="1595692370092">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595683237763" />
+    <state width="1860" height="205" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595692370092" />
     <state width="1874" height="231" key="GridCell.Tab.0.right/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
     <state width="1860" height="326" key="GridCell.Tab.1.bottom" timestamp="1594570073274">
       <screen x="0" y="0" width="1920" height="1040" />
