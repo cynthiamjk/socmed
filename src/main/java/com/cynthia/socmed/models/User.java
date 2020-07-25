@@ -35,7 +35,6 @@ public class User {
     private List <Post> likedPosts;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-
     private List<User> friends;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

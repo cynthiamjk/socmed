@@ -3,13 +3,13 @@ package com.cynthia.socmed.comp;
 import com.cynthia.socmed.DAO.UserDao;
 import com.cynthia.socmed.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Component;
-import org.springframework.validation.*;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.List;
 
 
 @Component
@@ -32,8 +32,8 @@ public class UserValidator implements Validator {
         LocalDate ld = LocalDate.now();
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "NotEmpty");
-        if (user.getUsername().length() > 32) {
-            errors.rejectValue("username", "Size.userForm.username");
+        if (user.getUsername().length() > 26) {
+            errors.rejectValue("username", "Size.userForm.username", "Username cannot exceed 26 characters");
         }
         if (userDao.findByUsername(user.getUsername()) != null) {
             errors.rejectValue("username", "Duplicate.userForm.username", "User already exists");
@@ -49,7 +49,7 @@ public class UserValidator implements Validator {
         }
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty");
-        if (user.getPassword().length() < 8 || user.getPassword().length() > 32) {
+        if (user.getPassword().length() < 8 || user.getPassword().length() > 25) {
             errors.rejectValue("password", "Size.userForm.password", "Password must contains at least 8 characters");
         }
 

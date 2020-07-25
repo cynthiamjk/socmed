@@ -2,7 +2,6 @@ package com.cynthia.socmed.services;
 
 import com.cynthia.socmed.DAO.CountryDao;
 import com.cynthia.socmed.models.Country;
-import com.cynthia.socmed.models.Event;
 import com.cynthia.socmed.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,12 +23,6 @@ public class CountryService {
         return imagePath;
     }
 
-    public String countryFlagEvent(Event event) {
-        Country c = event.getLocation();
-        String name = c.getName().toLowerCase();
-        String imagePath = "flag/png/" + name + ".png";
-        return imagePath;
-    }
 
 
     public List<Country> countries() {

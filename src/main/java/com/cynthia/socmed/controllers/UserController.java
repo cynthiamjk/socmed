@@ -1,6 +1,5 @@
 package com.cynthia.socmed.controllers;
 
-import com.cynthia.socmed.DAO.EmojisDao;
 import com.cynthia.socmed.comp.UserValidator;
 import com.cynthia.socmed.models.*;
 import com.cynthia.socmed.services.*;
@@ -43,22 +42,18 @@ public class UserController {
     @Autowired
     FriendRequestService friendRequestService;
 
-     @Autowired
-    EmojisDao emojisDao;
+    @Autowired
+    EmojiService emojiService;
 
 
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
 
-    public String index(ModelMap model, User u) throws IOException {
+    public String index(ModelMap model, User u) {
 
         //helps check if a post is liked by the user, display css on like button
         List<Post> likedPosts = userService.likedPost(u) ;
         model.addAttribute("likedPosts", likedPosts);
-
-        //add country flag and country name as title to the view
-        model.addAttribute("imagePath", countryService.countryFlag(u));
-        model.addAttribute("countryName", u.getCountry().getName());
 
         //display all user and friends' posts in desc order
         Post [] usersPostsArray =  postService.showAllPosts(u);
@@ -67,26 +62,12 @@ public class UserController {
         List<FriendRequest> received = friendRequestService.findAllByDest(u);
         model.addAttribute("received", received);
 
-
         List<User> friends = userService.getFriendship(u);
         model.addAttribute("friends", friends);
 
-        List <Emojis> emojis = (List<Emojis>) emojisDao.findAll();
+        List <Emojis> emojis = (List<Emojis>) emojiService.findAll();
         model.addAttribute("emojis", emojis);
 
-        List<Country> cd = countryService.findAll();
-
-
-
-
-  /*    Document doc = Jsoup.connect("https://apps.timwhitlock.info/emoji/tables/unicode").get();
-        Elements elm = doc.body().select("td.preview span");
-        File myObj = new File("C:\\Users\\CynthiaM\\Desktop\\socmed\\images\\lol.txt");
-        FileWriter myWriter = new FileWriter("lol.txt");
-        myWriter.write(elm.html());
-        myWriter.close();
-
-System.out.println(elm);*/
         return "profile";
     }
 
@@ -123,20 +104,41 @@ System.out.println(elm);*/
 
     @RequestMapping(value = "/friendsProfile", method = RequestMethod.GET)
     public String fProfile( @RequestParam(value="item", required =false) String username,
-                            ModelMap model, User u) {
+                            @RequestParam(name="action", defaultValue = "") String action,
+                            ModelMap model, User u, RedirectAttributesModelMap redirectAttributesModelMap) {
         User item = userService.findByUsername(username);
-        if (friendshipService.areFriends(item,u)) {
-            model.addAttribute("item", item);
-            List<Post> likedPosts = userService.likedPost(u);
-            model.addAttribute("likedPosts", likedPosts);
-            model.addAttribute("imagePath", countryService.countryFlag(item));
-            model.addAttribute("countryName", item.getCountry().getName());
-            model.addAttribute("userPosts", postService.showFriendsPosts(item));
-            return "friendsProfile";
-        } else {
 
-            return "redirect:profile";
+        switch(action) {
+            case "visitProfile":
+                if (friendshipService.areFriends(item, u)) {
+                    model.addAttribute("item", item);
+                    List<Post> likedPosts = userService.likedPost(u);
+                    model.addAttribute("likedPosts", likedPosts);
+                    model.addAttribute("imagePath", countryService.countryFlag(item));
+                    model.addAttribute("countryName", item.getCountry().getName());
+                    model.addAttribute("userPosts", postService.showFriendsPosts(item));
+                    return "friendsProfile";
+                }
+
+                break;
+
+            case "chat":
+                break;
+
+            case "mute":
+                break;
+
+            case "rmFriend":
+                userService.removeFriend(u, item);
+                break;
+
+            case "block":
+                break;
+
+            default:
         }
+
+        return "redirect:profile";
     }
 
     @RequestMapping(value = "/updateUsername", method = RequestMethod.POST)

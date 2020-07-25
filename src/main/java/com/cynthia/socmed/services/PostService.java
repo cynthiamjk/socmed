@@ -239,8 +239,11 @@ public class PostService {
     }
 
     public void deletePost (Post p, User u, String author) {
-        if(author.equals(u.getUsername()))
+        if(author.equals(u.getUsername())) {
+           File f = new File(p.getPicture().getAbsolutePath());
+           f.delete();
             postDao.delete(p);
+        }
 
     }
 

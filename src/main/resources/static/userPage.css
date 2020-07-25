@@ -188,9 +188,16 @@ font-size: 12px;
 }
 
 .fl {
-
+   display: grid;
+   grid-template-rows: 40px 40px;
 	margin: 10px;
 	word-break: break-all;
+
+}
+
+.flSearch {
+display: grid;
+margin: 10px;
 }
 
 .pp {
