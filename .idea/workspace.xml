@@ -20,15 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf790852-21b8-43a8-9a12-5dc96f45848f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/adminPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/friendRequests.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/book.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/friendRequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/friendRequests.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/friendsProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/friendsProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/adminPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/adminPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/friendRequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/friendRequests.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/friendsProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/friendsProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userList.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +84,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.55287355" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -100,10 +101,10 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="SocmedApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cynthia.socmed.SocmedApplication" />
       <module name="socmed" />
-      <option name="VM_PARAMETERS" value="-Dserver.port=8088" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=8089" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,10 +147,10 @@
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="693" y="298" width="526" height="483" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1590222108029" />
-    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594133828319">
+    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595796519331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594133828319" />
+    <state x="418" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595796519331" />
     <state x="418" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1591633889793" />
     <state x="637" y="322" width="638" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594133732492">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -187,25 +188,25 @@
     </state>
     <state x="743" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595676890044" />
     <state x="743" y="298" width="426" height="483" key="FileChooserDialogImpl/0.28.1920.1024@0.28.1920.1024" timestamp="1591280014166" />
-    <state width="1860" height="205" key="GridCell.Tab.0.bottom" timestamp="1595778381169">
+    <state width="1860" height="205" key="GridCell.Tab.0.bottom" timestamp="1595801351112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595778381169" />
+    <state width="1860" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595801351112" />
     <state width="1874" height="231" key="GridCell.Tab.0.bottom/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
-    <state width="1860" height="205" key="GridCell.Tab.0.center" timestamp="1595778381169">
+    <state width="1860" height="205" key="GridCell.Tab.0.center" timestamp="1595801351112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595778381169" />
+    <state width="1860" height="205" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595801351112" />
     <state width="1874" height="231" key="GridCell.Tab.0.center/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
-    <state width="1860" height="205" key="GridCell.Tab.0.left" timestamp="1595778381168">
+    <state width="1860" height="205" key="GridCell.Tab.0.left" timestamp="1595801351112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595778381168" />
+    <state width="1860" height="205" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595801351112" />
     <state width="1874" height="231" key="GridCell.Tab.0.left/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416932" />
-    <state width="1860" height="205" key="GridCell.Tab.0.right" timestamp="1595778381169">
+    <state width="1860" height="205" key="GridCell.Tab.0.right" timestamp="1595801351112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595778381169" />
+    <state width="1860" height="205" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595801351112" />
     <state width="1874" height="231" key="GridCell.Tab.0.right/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
     <state width="1860" height="326" key="GridCell.Tab.1.bottom" timestamp="1594570073274">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -231,10 +232,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="490" y="173" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593695414236" />
-    <state x="721" y="162" key="SettingsEditor" timestamp="1595252972535">
+    <state x="721" y="162" key="SettingsEditor" timestamp="1595795544738">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="721" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595252972535" />
+    <state x="721" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595795544738" />
     <state width="498" height="454" key="SwitcherDM" timestamp="1594824066831">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

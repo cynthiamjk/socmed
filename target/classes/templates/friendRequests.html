@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="userPage.css">
+    <link rel="stylesheet" type="text/css" href="friendRequests.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -21,7 +21,7 @@
 
 <nav class="navbar navbar-expand-sm bg-grey">
     <ul class="navbar-nav">
-        <li  class="nav-item" id="welcomeMessage">
+        <li  class="nav-item" >
             <a th:href="@{/profile}"> Welcome <span th:text="${user.username}"></span></a>
         </li>
         <li class="nav-item">
@@ -30,15 +30,7 @@
         <li class="nav-item">
             <span th:if="${user.username != null}"><a th:href="@{/userSettings}">Settings</a></span>
         </li>
-    <Li>
-        <div class="userSearch">Search user
-            <form  th:action="@{/searchUser}" method="POST">
-                <input type="text" name="search" id="search" th:value="${username}"/>
-                <input class="btn" type="submit" value="Go"/>
-            </form>
-            <span th:text="${errSearchUser}"></span>
-        </div>
-    </Li>
+
         <li class="nav-item">
             <span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><a th:href="@{/adminPage}" >Admin Page</a></span>
         </li>
@@ -46,20 +38,34 @@
     </ul>
 </nav>
 <br>
+
+<div class="content">
 <p th:text="${errorMessage}"></p>
 
 <th:block th:each="item : ${frs}">
+    <div class="titles"><h4>Friend Requests</h4></div>
+    <div class="friendRequests">
+        <div class="left">
+            <div class="test">picwillcomehere</div></div>
+        <div class="mid">
+    <form th:action="@{/friendRequests}" method="post" id="myForm" >
+        <input type="hidden" name="id" th:value="${item.id}">
+        <div class="senderName">
+        <input type="hidden" name="sender" th:value="${item.sender.username}"><p th:text="${item.sender.username}" style="font-size: 20px, font-weight: bold"></p></input>
+        </div>
+        </form>
+        </div>
+        <div class="right">
+       <div class="btn">
+           <button type="submit" class="fas fa-check-circle" value="acceptFr" name="action" form="myForm" title="Accept"
+           style="border: none; background-color: white; color: green"></button></div>
+            <div class="btn">
+        <button type="submit" class="fas fa-times-circle" value="declineFR" name="action" form="myForm" title="Decline"
+                style="border: none; background-color: white; color: red"></button></div>
+        </div>
 
-    <form th:action="@{/friendRequests}" method="post" >
-        <input type="hidden" name="id" th:value="${item.id}" ><p th:text="${item.id}"></p></input>
-        <input type="hidden" name="sender" th:value="${item.sender.username}"><p th:text="${item.sender.username}"></p></input>
-
-        <button type="submit" value="acceptFr", name="action">Accept</button>
-        <button type="submit" value="declineFR", name="action">Decline</button>
-
-</form>
-
+    </div>
 </th:block>
-
+</div>
 </body>
 </html>

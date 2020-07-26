@@ -1,0 +1,83 @@
+
+/*NavBar
+-----------------------------------------------------------------------------------------
+*/
+
+.navbar {
+ 	position: fixed;
+ 	top:0;
+    left:0;
+    right:0;
+    z-index:99;
+    background-color: white;
+	border-bottom: 3px solid mediumpurple;
+	justify-content: space-around;
+}
+
+li {
+    list-style-type: none;
+}
+
+.nav-item {
+	padding: 10%
+}
+
+.nav-link {
+	color: black;
+}
+
+.nav-link:hover {
+
+	color: grey;
+}
+
+.nav-link:visited {
+	color: black;
+}
+
+a {
+	color: black;
+}
+
+a:hover {
+	font-style: none;
+	text-decoration: none;
+	color: black;
+
+}
+
+a:visited {
+	color: black;
+}
+
+a:active {
+	color:black;
+}
+
+.titles {
+
+	border-bottom: 1px dotted grey;
+	word-break: break-all;
+}
+
+.content {
+display: grid;
+grid-template-rows:30px 50px 100px;
+margin-top: 200px;
+margin-left: 720px;
+margin-right: 720px;
+height: 800px;
+overflow-y: auto;
+
+}
+
+.friendRequests {
+display: grid;
+grid-template-columns: 100px 200px 100px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+align-items: center;
+justify-items: center;
+
+}
+
+
