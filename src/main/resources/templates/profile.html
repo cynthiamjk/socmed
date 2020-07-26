@@ -10,7 +10,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="userPage.css">
-	<!--<link rel="stylesheet" type="text/css" href="static/book.css">-->
 	<script type="text/javascript" src="signup.js"> </script>
 	<script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -52,11 +51,7 @@
 				</form>
 				</span>
 				</div>
-			<!--	<form  th:action="@{/searchUser}" method="POST">
-					<input type="text" name="search" id="search" th:value="${username}"/>
-					<input class="btn" type="submit" value="Go"/>
-				</form>
-				<span th:text="${errSearchUser}"></span>-->
+
 			</div>
 		<li class="nav-item">
 			<span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><a th:href="@{/adminPage}" >Admin Page</a></span>

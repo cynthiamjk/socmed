@@ -132,6 +132,9 @@ public class UserController {
                           @RequestParam(name="action", defaultValue = "") String action,
                           ModelMap model, User u) {
        User item = userService.findByUsername(username);
+       List<User> friends = userService.getFriendship(u);
+       List <String> friendsName =userService.friendsNames(friends);
+       List<User> users = userService.findAll();
        switch(action) {
            case "visitProfile":
                if (friendshipService.areFriends(item, u)) {
@@ -145,12 +148,14 @@ public class UserController {
                }
                break;
           case "userList":
-              List<User> friends = userService.getFriendship(u);
-              List <String> friendsName =userService.friendsNames(friends);
+
+              model.addAttribute("allUsers", users);
               model.addAttribute("friendsName", friendsName);
               model.addAttribute("friends", friends);
               model.addAttribute("item", item);
-               return "userList";
+              List<User> us = userService.findAll();
+              model.addAttribute("allUsers", us);
+              return "userList";
 
            default:
        }
@@ -174,6 +179,8 @@ public class UserController {
                     model.addAttribute("imagePath", countryService.countryFlag(item));
                     model.addAttribute("countryName", item.getCountry().getName());
                     model.addAttribute("userPosts", postService.showFriendsPosts(item));
+                    List<User> users = userService.findAll();
+                    model.addAttribute("allUsers", users);
                     return "friendsProfile";
                 }
                 break;

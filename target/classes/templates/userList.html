@@ -28,13 +28,7 @@
         <li class="nav-item">
             <span th:if="${user.username != null}"><a th:href="@{/addEvent}">New event</a></span>
         </li>
-        <li>
-            <div class="userSearch" >Search user
-                <form  th:action="@{/searchUser}" method="POST">
-                    <input type="test" name="search" id="search" th:value="${username}"/>
-                    <input class="btn" type="submit" value="Go"/>
-                </form>
-            </div>
+
         <li class="nav-item">
             <span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><a th:href="@{/adminPage}" >Admin Page</a></span>
         </li>
@@ -89,7 +83,40 @@
 
     </span>
 </div>
+<script>
+ $(document).ready(function() {
+  $("#search").keyup(function() {
+    var x = document.getElementById('users');
+    if($(this).val() == "") {
+      x.style.display = 'none';
+    } else {
+      x.style.display = 'block';
+    }
+  });
+});
 
+</script>
+
+<script>
+function searchUsers() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("search");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("users");
+  tr = table.getElementsByTagName("form");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByClassName("usersBody")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
 
 </body>
 </html>
