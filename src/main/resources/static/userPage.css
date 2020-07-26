@@ -322,6 +322,22 @@ grid-template-columns: repeat(20, 25px);
   overflow-y: auto;
 }
 
+.allUs {
+ display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+}
+
+.show1 {
+  width: 200px;
+  height: 300px;
+  overflow-y: auto;
+}
+
 .smile {
 font-size: 20px;
 

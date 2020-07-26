@@ -3,8 +3,10 @@ package com.cynthia.socmed.comp;
 
 import com.cynthia.socmed.DAO.CountryDao;
 import com.cynthia.socmed.DAO.EmojisDao;
+import com.cynthia.socmed.DAO.RoleDao;
 import com.cynthia.socmed.models.Country;
 import com.cynthia.socmed.models.Emojis;
+import com.cynthia.socmed.models.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
@@ -28,10 +30,14 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
     @Autowired
     EmojisDao emojisDao;
 
+    @Autowired
+    RoleDao roleDao;
+
     @Override
     public void onApplicationEvent(final ApplicationReadyEvent event) {
 
         List<Country> countries = (List<Country>) countryDao.findAll();
+        List<Role> roles = (List<Role>) roleDao.findAll();
         List<Emojis> emojis = (List<Emojis>) emojisDao.findAll();
         String line;
         String line2;
@@ -39,10 +45,11 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
         try {
             if(countries.isEmpty()) {
                 BufferedReader br = new BufferedReader(new FileReader("C:/Users/CynthiaM/Desktop/socmed/src/main/resources/static/countriesOk.txt"));
-
+                String s;
                 while ((line = br.readLine()) != null) {
                     Country c = new Country();
                     c.setName(line);
+                    c.setIcon("flag/png/" + line + ".png");
                     countryDao.save(c);
                 }
             }
@@ -68,8 +75,28 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
         }
 
 
+
+
+
+
+        if(roles.isEmpty()) {
+            Role admin = new Role();
+            admin.setName("ADMIN");
+            roleDao.save(admin);
+            Role moderator = new Role();
+            moderator.setName("MODERATOR");
+            roleDao.save(moderator);
+            Role user = new Role();
+            user.setName("USER");
+            roleDao.save(user);
+
+        }
+
         return;
     }
+
+
+
 
 
 }

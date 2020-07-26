@@ -6,10 +6,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.io.File;
 import java.time.LocalDate;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Data
@@ -37,18 +35,14 @@ public class User {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<User> friends;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "user_authority",
-            joinColumns = { @JoinColumn(name = "user_id") },
-            inverseJoinColumns = { @JoinColumn(name = "authority_id") })
-    private Set<Authority> authorities = new HashSet<>();
+    @ManyToOne
+    private Role role ;
 
     @ManyToMany
     private List<User> blocked;
     @OneToMany
     private List <Event> events;
-    @Enumerated(EnumType.STRING)
-    private Role role;
+
     @OneToMany
     private List<Style> styles;
     private String resetPassword;

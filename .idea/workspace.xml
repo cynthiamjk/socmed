@@ -20,12 +20,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf790852-21b8-43a8-9a12-5dc96f45848f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/RoleDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/LogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/LogoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/FriendRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/FriendRequestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/book.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/183.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/cycy.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/184.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/185.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/6245.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/6247.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/6249.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/7998.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/aaa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/bbb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qqq.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/ApplicationStartup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/ApplicationStartup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Authority.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/AuthorityType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/SocmedUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/SocmedUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/userPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/userPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/friendAdded.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/friendRequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/friendRequests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/friendsProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/friendsProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/book.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/comp/ApplicationStartup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/comp/ApplicationStartup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/Authority.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/AuthorityType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/SocmedUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/SocmedUserDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/UserDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/userPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/userPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/friendAdded.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/friendRequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/friendRequests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/friendsProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/friendsProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userList.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +87,8 @@
       <list>
         <option value="Enum" />
         <option value="HTML File" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -83,17 +127,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\CynthiaM\Desktop\socmed\src\main\resources\static" />
-      <recent name="C:\Users\CynthiaM\Desktop\socmed\images" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.cynthia.socmed.services" />
       <recent name="com.cynthia.socmed.comp" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CynthiaM\Desktop\socmed\src\main\resources\static" />
+      <recent name="C:\Users\CynthiaM\Desktop\socmed\images" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -153,10 +197,10 @@
     </state>
     <state x="637" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594133732492" />
     <state x="637" y="345" width="638" height="390" key="#com.intellij.fileTypes.FileTypeChooser/0.28.1920.1024@0.28.1920.1024" timestamp="1591627551108" />
-    <state x="768" y="219" width="565" height="591" key="#com.intellij.ide.util.MemberChooser" timestamp="1595249648238">
+    <state x="768" y="219" width="565" height="591" key="#com.intellij.ide.util.MemberChooser" timestamp="1595702131846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="768" y="219" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595249648238" />
+    <state x="768" y="219" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595702131846" />
     <state x="768" y="244" width="565" height="591" key="#com.intellij.ide.util.MemberChooser/0.28.1920.1024@0.28.1920.1024" timestamp="1591608504651" />
     <state x="692" y="324" width="527" height="430" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588855854175">
       <screen x="0" y="28" width="1920" height="1024" />
@@ -170,10 +214,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="595" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593190044759" />
-    <state x="693" y="265" width="526" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594501947781">
+    <state x="693" y="265" width="526" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595697941146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="693" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594501947781" />
+    <state x="693" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595697941146" />
     <state x="693" y="289" width="526" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1590073448295" />
     <state x="707" y="227" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1592571558390">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -184,25 +228,25 @@
     </state>
     <state x="743" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595676890044" />
     <state x="743" y="298" width="426" height="483" key="FileChooserDialogImpl/0.28.1920.1024@0.28.1920.1024" timestamp="1591280014166" />
-    <state width="1860" height="205" key="GridCell.Tab.0.bottom" timestamp="1595692370092">
+    <state width="1860" height="205" key="GridCell.Tab.0.bottom" timestamp="1595766535854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595692370092" />
+    <state width="1860" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595766535854" />
     <state width="1874" height="231" key="GridCell.Tab.0.bottom/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
-    <state width="1860" height="205" key="GridCell.Tab.0.center" timestamp="1595692370092">
+    <state width="1860" height="205" key="GridCell.Tab.0.center" timestamp="1595766535854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595692370092" />
+    <state width="1860" height="205" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595766535854" />
     <state width="1874" height="231" key="GridCell.Tab.0.center/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
-    <state width="1860" height="205" key="GridCell.Tab.0.left" timestamp="1595692370092">
+    <state width="1860" height="205" key="GridCell.Tab.0.left" timestamp="1595766535854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595692370092" />
+    <state width="1860" height="205" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595766535854" />
     <state width="1874" height="231" key="GridCell.Tab.0.left/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416932" />
-    <state width="1860" height="205" key="GridCell.Tab.0.right" timestamp="1595692370092">
+    <state width="1860" height="205" key="GridCell.Tab.0.right" timestamp="1595766535854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595692370092" />
+    <state width="1860" height="205" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595766535854" />
     <state width="1874" height="231" key="GridCell.Tab.0.right/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
     <state width="1860" height="326" key="GridCell.Tab.1.bottom" timestamp="1594570073274">
       <screen x="0" y="0" width="1920" height="1040" />

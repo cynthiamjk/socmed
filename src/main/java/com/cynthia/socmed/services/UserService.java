@@ -2,6 +2,7 @@ package com.cynthia.socmed.services;
 
 import com.cynthia.socmed.DAO.FriendshipDao;
 import com.cynthia.socmed.DAO.LikesDao;
+import com.cynthia.socmed.DAO.RoleDao;
 import com.cynthia.socmed.DAO.UserDao;
 import com.cynthia.socmed.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,10 @@ public class UserService  {
     @Autowired
     FriendshipDao friendshipDao;
 
+    @Autowired
+    RoleDao roleDao;
+
+
 
     public void registerUser(User user) {
         List<User> users = userDao.findAll();
@@ -43,10 +48,12 @@ public class UserService  {
         user.setAge(Period.between(user.getBirthdate(), LocalDate.now()).getYears());
         user.setEventIsPublic(true);
         user.setFriendListIsPublic(true);
-        if (users.isEmpty()) {
-            user.setRole(Role.valueOf("ADMIN"));
+
+
+       if (users.isEmpty()) {
+           user.setRole(roleDao.findByName("ADMIN"));
         } else {
-            user.setRole(Role.valueOf("USER"));
+            user.setRole(roleDao.findByName("USER"));
         }
         userDao.save(user);
     }

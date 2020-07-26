@@ -31,15 +31,16 @@
             <span th:if="${user.username != null}"><a th:href="@{/addEvent}">New event</a></span>
         </li>
         <li>
-        <div class="userSearch">Search user
-            <form th:object="${user}" th:action="@{/searchUser}" method="get">
-                <input type="text" name="search" id="search" th:value="${search}"/>
-                <input class="btn" type="submit" value="Go"/>
-            </form>
-        </div>
+            <div class="userSearch">Search user
+                <form  th:action="@{/searchUser}" method="POST">
+                    <input type="text" name="search" id="search" th:value="${username}"/>
+                    <input class="btn" type="submit" value="Go"/>
+                </form>
+                <span th:text="${errSearchUser}"></span>
+            </div>
         </li>
         <li class="nav-item">
-            <span th:if="${user.username != null and user.role == T(com.cynthia.socmed.models.Role).ADMIN}"><a th:href="@{/adminPage}" >Admin Page</a></span>
+            <span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><a th:href="@{/adminPage}" >Admin Page</a></span>
 
         </li>
 

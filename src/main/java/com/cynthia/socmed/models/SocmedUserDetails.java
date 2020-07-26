@@ -4,8 +4,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.stream.Collectors;
+import java.util.List;
 
 public class SocmedUserDetails implements UserDetails {
 
@@ -17,19 +18,23 @@ public class SocmedUserDetails implements UserDetails {
 
         }
 
-        @Override
-
-        public Collection<? extends GrantedAuthority> getAuthorities() {
-            return user.getAuthorities().stream().map(authority -> new SimpleGrantedAuthority(authority.getName().toString())).collect(Collectors.toList());
-
-        }
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+       Role role = user.getRole();
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+            authorities.add(new SimpleGrantedAuthority(role.getName()));
+        return authorities;
+    }
 
         public int getId() {
             return user.getId();
 
         }
 
-        @Override
+
+
+
+    @Override
         public String getPassword() {
             return user.getPassword();
 

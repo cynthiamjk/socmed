@@ -68,6 +68,12 @@ public class UserController {
         List <Emojis> emojis = (List<Emojis>) emojiService.findAll();
         model.addAttribute("emojis", emojis);
 
+        List<User> users = userService.findAll();
+        model.addAttribute("allUsers", users);
+
+        List <String> friendsName =userService.friendsNames(friends);
+        model.addAttribute("friendsName", friendsName);
+
         return "profile";
     }
 
@@ -102,10 +108,57 @@ public class UserController {
         return "userSettings";
     }
 
-    @RequestMapping(value = "/friendsProfile", method = RequestMethod.GET)
+   /* @RequestMapping(value = "/searchUser", method = RequestMethod.POST)
+    public String findUser(@RequestParam(value = "search", required = false) String username, Model model, User u,
+                           RedirectAttributesModelMap redirectAttributesModelMap) {
+        if (!username.matches("[\\w*\\s*]*")) {
+            redirectAttributesModelMap.addFlashAttribute("errSearchUser", "We couldn't find what you were looking for");
+            return "redirect:profile";
+        }
+        if (userService.existsByUsername(username)) {
+            List<User> friends = userService.getFriendship(u);
+            List <String> friendsName =userService.friendsNames(friends);
+            model.addAttribute("friendsName", friendsName);
+            model.addAttribute("friends", friends);
+            model.addAttribute("item", username);
+            model.addAttribute("friend", userService.findByUsername(username));
+            return "userList";
+        }
+        redirectAttributesModelMap.addFlashAttribute("errSearchUser", "We couldn't find what you were looking for");
+        return "redirect:profile";
+    }*/
+   @RequestMapping(value = "/searchAction", method = RequestMethod.GET)
+   public String uResult( @RequestParam(value="item", required =false) String username,
+                          @RequestParam(name="action", defaultValue = "") String action,
+                          ModelMap model, User u) {
+       User item = userService.findByUsername(username);
+       switch(action) {
+           case "visitProfile":
+               if (friendshipService.areFriends(item, u)) {
+                   model.addAttribute("item", item);
+                   List<Post> likedPosts = userService.likedPost(u);
+                   model.addAttribute("likedPosts", likedPosts);
+                   model.addAttribute("imagePath", countryService.countryFlag(item));
+                   model.addAttribute("countryName", item.getCountry().getName());
+                   model.addAttribute("userPosts", postService.showFriendsPosts(item));
+                   return "friendsProfile";
+               }
+               break;
+          case "userList":
+              model.addAttribute("item", item);
+               return "userList";
+
+           default:
+       }
+
+       return "redirect:profile";
+   }
+
+
+    @RequestMapping(value = "/friendsAction", method = RequestMethod.GET)
     public String fProfile( @RequestParam(value="item", required =false) String username,
                             @RequestParam(name="action", defaultValue = "") String action,
-                            ModelMap model, User u, RedirectAttributesModelMap redirectAttributesModelMap) {
+                            ModelMap model, User u) {
         User item = userService.findByUsername(username);
 
         switch(action) {
@@ -119,7 +172,6 @@ public class UserController {
                     model.addAttribute("userPosts", postService.showFriendsPosts(item));
                     return "friendsProfile";
                 }
-
                 break;
 
             case "chat":
@@ -136,9 +188,10 @@ public class UserController {
                 break;
 
             default:
+
         }
 
-        return "redirect:profile";
+       return "redirect:profile";
     }
 
     @RequestMapping(value = "/updateUsername", method = RequestMethod.POST)
@@ -234,32 +287,16 @@ public class UserController {
         return "redirect:userSettings";
     }
 
-    @RequestMapping(value = "/searchUser", method = RequestMethod.POST)
-    public String findUser(@RequestParam(value = "search", required = false) String username, Model model, User u,
-                           RedirectAttributesModelMap redirectAttributesModelMap) {
-        if (!username.matches("[\\w*\\s*]*")) {
-            redirectAttributesModelMap.addFlashAttribute("errSearchUser", "We couldn't find what you were looking for");
-            return "redirect:profile";
-        }
-        if (userService.existsByUsername(username)) {
-            List<User> friends = userService.getFriendship(u);
-            List <String> friendsName =userService.friendsNames(friends);
-            model.addAttribute("friendsName", friendsName);
-            model.addAttribute("friends", friends);
-            model.addAttribute("username", username);
-            return "userList";
-        }
-        redirectAttributesModelMap.addFlashAttribute("errSearchUser", "We couldn't find what you were looking for");
-        return "redirect:profile";
-    }
+
 
 
     @RequestMapping(value = "/addFriend", method = RequestMethod.POST)
     public String addFriend(
-            @RequestParam(value = "username", required = false) String username,
+            @RequestParam(value = "item", required = false) String username,
             Model model) {
-
+System.out.println(username);
         User sender = (User) model.getAttribute("user");
+
         friendRequestService.createFriendRequest(sender, username);
         return "redirect:profile";
 

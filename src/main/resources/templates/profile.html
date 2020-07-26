@@ -35,14 +35,31 @@
 		</li>
 		<li>
 			<div class="userSearch">Search user
-				<form  th:action="@{/searchUser}" method="POST">
+
+				<input type="text" name="search" id="search" th:value="${username}" onkeyup="searchUsers()"/>
+
+				<span th:text="${errSearchUser}"></span>
+				<div class="allUs" id="users">
+				<span th:each="search : ${allUsers}">
+
+				<form th:action="@{/searchAction}" method="get">
+					 <input type="hidden" name="item"  th:value="${search.username}">
+					<span th:if="${#lists.contains(friendsName, '__${search.username}__')}">
+					<button type="submit" value="visitProfile" name="action" style="border: none"><span class="usersBody" th:text="${search.username}"></span></button></span>
+						<span th:unless="${#lists.contains(friendsName, '__${search.username}__')and not #strings.equals(search.username, user.username)}">
+									<button type="submit" value="userList" name="action" style="border: none"><span class="usersBody" th:text="${search.username}"></span></button></span>
+
+				</form>
+				</span>
+				</div>
+			<!--	<form  th:action="@{/searchUser}" method="POST">
 					<input type="text" name="search" id="search" th:value="${username}"/>
 					<input class="btn" type="submit" value="Go"/>
 				</form>
-				<span th:text="${errSearchUser}"></span>
+				<span th:text="${errSearchUser}"></span>-->
 			</div>
 		<li class="nav-item">
-			<span th:if="${user.username != null and user.role == T(com.cynthia.socmed.models.Role).ADMIN}"><a th:href="@{/adminPage}" >Admin Page</a></span>
+			<span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><a th:href="@{/adminPage}" >Admin Page</a></span>
 		</li>
 
 	</ul>
@@ -100,7 +117,7 @@
 
 <span th:if="${not #lists.isEmpty(friends)}">
 					<th:block th:each="item : ${friends}">
-						<form th:action="@{/friendsProfile}" method="get" id="flForm">
+						<form th:action="@{/friendsAction}" method="get" id="flForm">
 								<div class="flbody">
 								<span th:if="${item.profilePicturePath != null}">
 									<img th:src="${item.profilePicturePath}" style="width: 20px;height: 20px; border-radius: 50%"></span>
@@ -269,6 +286,40 @@
 
 </div>
 
+<script>
+ $(document).ready(function() {
+  $("#search").keyup(function() {
+    var x = document.getElementById('users');
+    if($(this).val() == "") {
+      x.style.display = 'none';
+    } else {
+      x.style.display = 'block';
+    }
+  });
+});
+
+</script>
+
+<script>
+function searchUsers() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("search");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("users");
+  tr = table.getElementsByTagName("form");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByClassName("usersBody")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
 <script>
 function searchFunction() {
   var input, filter, table, tr, td, i, txtValue;

@@ -29,14 +29,14 @@
             <span th:if="${user.username != null}"><a th:href="@{/addEvent}">New event</a></span>
         </li>
         <li>
-            <div class="userSearch">Search user
+            <div class="userSearch" >Search user
                 <form  th:action="@{/searchUser}" method="POST">
-                    <input type="test" name="username" id="search" th:value="${username}"/>
+                    <input type="test" name="search" id="search" th:value="${username}"/>
                     <input class="btn" type="submit" value="Go"/>
                 </form>
             </div>
         <li class="nav-item">
-            <span th:if="${user.username != null and user.role == T(com.cynthia.socmed.models.Role).ADMIN}"><a th:href="@{/adminPage}" >Admin Page</a></span>
+            <span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><a th:href="@{/adminPage}" >Admin Page</a></span>
         </li>
 
     </ul>
@@ -45,20 +45,19 @@
 <br>
 
 
-<div class="fl"> User found
+<div class="content" style="border: 1px solid mediumpurple" > User found
 
-   <form th:action="@{/addFriend}" method="post">
-       <input type="hidden" name="username" th:value="${username}"><span th:text="${username}"></span>
-      <span th:if="${not #lists.contains(friendsName, '__${username}__')and not #strings.equals(username,user.username)}"><button value="sendFriendRequest", name="action"  >add friend</button></span>
-       <span th:unless="${not #lists.contains(friendsName, '__${username}__') }">
-            <form th:action="@{/removeFriend}" method="post">
-       <input type="hidden" name="username" th:value="${username}" >
-                 <button value="removeFriend" name="action">remove friend</button>
+
+
+          <span th:if="${item.profilePicturePath != null}">
+									<img th:src="${item.profilePicturePath}" style="width: 20px;height: 20px; border-radius: 50%"></span>
+            <span th:unless="${item.profilePicturePath != null}">
+					<img src="defaultPicture.jpg" style="width: 20px;height: 20px; border-radius: 50%" ></span>
+    <form th:action="@{/addFriend}" method="post">
+          <input type="hidden" name="item" th:value="${item.username}"><span th:text="${item.username}"></span>
+
+               <button type="submit" class="fas fa-plus" title="Send friend request" ></button>
    </form>
-        </span>  
-   </form>
-      <input type="hidden" name="username" th:value="${username}" >
-       <span th:if="${#lists.contains(friendsName, '__${username}__') }"><button >see profile</button></span>
 
 
 

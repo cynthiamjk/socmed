@@ -30,9 +30,17 @@
         <li class="nav-item">
             <span th:if="${user.username != null}"><a th:href="@{/userSettings}">Settings</a></span>
         </li>
-
+    <Li>
+        <div class="userSearch">Search user
+            <form  th:action="@{/searchUser}" method="POST">
+                <input type="text" name="search" id="search" th:value="${username}"/>
+                <input class="btn" type="submit" value="Go"/>
+            </form>
+            <span th:text="${errSearchUser}"></span>
+        </div>
+    </Li>
         <li class="nav-item">
-            <span th:if="${user.username != null and user.role == T(com.cynthia.socmed.models.Role).ADMIN}"><a th:href="@{/adminPage}" >Admin Page</a></span>
+            <span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><a th:href="@{/adminPage}" >Admin Page</a></span>
         </li>
 
     </ul>
