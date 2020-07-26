@@ -145,6 +145,10 @@ public class UserController {
                }
                break;
           case "userList":
+              List<User> friends = userService.getFriendship(u);
+              List <String> friendsName =userService.friendsNames(friends);
+              model.addAttribute("friendsName", friendsName);
+              model.addAttribute("friends", friends);
               model.addAttribute("item", item);
                return "userList";
 
