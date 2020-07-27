@@ -3,9 +3,11 @@ package com.cynthia.socmed.comp;
 
 import com.cynthia.socmed.DAO.CountryDao;
 import com.cynthia.socmed.DAO.EmojisDao;
+import com.cynthia.socmed.DAO.ReportObjectDao;
 import com.cynthia.socmed.DAO.RoleDao;
 import com.cynthia.socmed.models.Country;
 import com.cynthia.socmed.models.Emojis;
+import com.cynthia.socmed.models.ReportObject;
 import com.cynthia.socmed.models.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -33,12 +35,16 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
     @Autowired
     RoleDao roleDao;
 
+    @Autowired
+    ReportObjectDao reportObjectDao;
+
     @Override
     public void onApplicationEvent(final ApplicationReadyEvent event) {
 
         List<Country> countries = (List<Country>) countryDao.findAll();
         List<Role> roles = (List<Role>) roleDao.findAll();
         List<Emojis> emojis = (List<Emojis>) emojisDao.findAll();
+        List<ReportObject> reportObjects = (List<ReportObject>) reportObjectDao.findAll();
         String line;
         String line2;
 
@@ -89,6 +95,19 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
             Role user = new Role();
             user.setName("USER");
             roleDao.save(user);
+
+        }
+
+        if(reportObjects.isEmpty()) {
+            ReportObject racism = new ReportObject();
+            racism.setName("Racism");
+            reportObjectDao.save(racism);
+            ReportObject fake = new ReportObject();
+            fake.setName("Fake");
+            reportObjectDao.save(fake);
+            ReportObject pornography = new ReportObject();
+            pornography.setName("Pornography");
+            reportObjectDao.save(pornography);
 
         }
 

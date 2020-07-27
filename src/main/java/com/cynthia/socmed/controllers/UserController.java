@@ -1,5 +1,6 @@
 package com.cynthia.socmed.controllers;
 
+import com.cynthia.socmed.DAO.ReportDao;
 import com.cynthia.socmed.comp.UserValidator;
 import com.cynthia.socmed.models.*;
 import com.cynthia.socmed.services.*;
@@ -15,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -45,6 +47,12 @@ public class UserController {
     @Autowired
     EmojiService emojiService;
 
+    @Autowired
+    ReportObjectService reportObjectService;
+
+    @Autowired
+    ReportDao reportDao;
+
 
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
@@ -74,6 +82,9 @@ public class UserController {
         List <String> friendsName =userService.friendsNames(friends);
         model.addAttribute("friendsName", friendsName);
 
+        List<ReportObject> reportObjects = reportObjectService.findAll();
+        model.addAttribute("reportObjects", reportObjects);
+
         return "profile";
     }
 
@@ -88,13 +99,7 @@ public class UserController {
         return "addEvent";
     }
 
-    @RequestMapping(value = "/adminPage", method = RequestMethod.GET)
-    public String admin(User u) {
-        if (u.getId() == 0 || u.getId() != 1) {
-            return "redirect:/";
-        }
-        return "adminPage";
-    }
+
 
     @RequestMapping(value = "/userSettings", method = RequestMethod.GET)
     public String settings(ModelMap model, User u) {
@@ -423,9 +428,31 @@ System.out.println(username);
         return "redirect:profile";
     }
 
+    @RequestMapping(value= "/reportPost", method = RequestMethod.POST)
+    public String reportPost (@RequestParam(name="id2") int id,
+                              @RequestParam(name="reportObject") String reportObjectName,
+    ModelMap modelMap, User u) {
+       Post p =postService.findById(id);
+       ReportObject rep = reportObjectService.findByName(reportObjectName);
+       Report report = new Report();
+       report.setDate(LocalDate.now());
+       report.setSender(u);
+       report.setPost(p);
+       report.setReportObject(rep);
+       reportDao.save(report);
+       return "redirect:profile";
+    }
+
     @RequestMapping(path = "/findPost/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Post findPost(@PathVariable("id") int postId) {
+        return postService.findById(postId);
+    }
+
+    @RequestMapping(path = "/findPostToReport/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public Post findPostToReport(@PathVariable("id") int postId) {
+
         return postService.findById(postId);
     }
 }

@@ -36,21 +36,34 @@
 	</nav>
 	<br>
 
-	<div class="content"> 
-		<div class="userSearch">Search user
-			<form>
-				<input type="text" name="username">
-				<button type="submit" value="submit">Search</button>
-			</form>
+	<div class="content">
+		<div class="inner">
+			<div class="titles">Users</div>
+			<div class="blocks">
+				<span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><span class="fas fa-cog"></span><a th:href="@{/userOptions}" >Users options</a></span>
 		</div>
-		<div class="postSearch">Search post
-			<form>
-				<input type="text" name="post">
-				<button type="submit" value="submit">Search</button>
-			</form>
+			<div class="rep">
+				<p>reports</p>
+			</div>
 		</div>
-
-
+		<div class="inner">
+			<div class="titles">Posts</div>
+			<div class="blocks">
+				<span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><span class="fas fa-cog"></span><a th:href="@{/postOptions}" >Posts options</a></span>
+			</div>
+			<div class="rep">
+				<p>reports</p>
+			</div>
+		</div>
+		<div class="inner">
+			<div class="titles">Events</div>
+			<div class="blocks">
+				<span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><span class="fas fa-cog"></span><a th:href="@{/eventOptions}" >Event options</a></span>
+			</div>
+			<div class="rep">
+				<p>reports</p>
+			</div></div>
+		</div>
 	</div>
 
 

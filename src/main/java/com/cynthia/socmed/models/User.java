@@ -43,8 +43,7 @@ public class User {
     @OneToMany
     private List <Event> events;
 
-    @OneToMany
-    private List<Style> styles;
+
     private String resetPassword;
     private String resetToken;
     @OneToOne

@@ -28,15 +28,12 @@ public class Post {
     @OneToOne
     private LinkPreview linkPreview;
     private String embedLink;
-
     private String picturePath;
-
     @OneToMany
     private List<Likes> userLikes;
-
     private int likes;
 
-    private boolean isHidden;
+
 
     @Override
     public boolean equals(Object o) {

@@ -53,12 +53,39 @@ a:visited {
 a:active {
 	color:black;
 }
+/*------------------------------------------------------------------------------------
+Body
+----------------------------------------------------------------------------------*/
+
 
 .content {
 display: grid;
+grid-template-columns: 200px 200px 200px;
 margin-top: 200px;
-margin-left: 500px;
-margin-right: 500px;
+margin-left: 600px;
+margin-right: 600px;
+grid-gap: 20px;
+justify-content: center;
+}
+
+.titles {
+	border-bottom: 1px dotted grey;
+	word-break: break-all;
+	font-weight: bold;
+}
+
+.inner {
+display: grid;
 border: 1px solid mediumpurple;
+border-radius: 5%;
+padding: 20px;
+
+}
+
+.blocks {
+display: grid;
+margin-top: 5px;
+
+
 
 }

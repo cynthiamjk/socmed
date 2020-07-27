@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-        <html lang="en">
-        <head>
-            <title>Name</title>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-            <link rel="stylesheet" type="text/css" href="static/addEvent.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
-            <script type="text/javascript" src="signup.js"></script>
-        </head>
+<html lang="en">
+<head>
+    <title>Name</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/addEvent.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <script type="text/javascript" src="signup.js"></script>
+</head>
 <body>
 
 <nav class="navbar navbar-expand-sm bg-grey">
@@ -36,52 +36,45 @@
         <div class="oon"><h4>New event</h4><p>(Please make sure that all informations are correct or the event may be removed)</p></div>
         <span th:text="${err}" style="color: red; font-style: italic"></span>
         <form action="/newEvent" method="post"  modelAttribute="eventForm" enctype="multipart/form-data">
-        <div class="eventBody">
+            <div class="eventBody">
 
-               <div class="left">
-                   <div class="nameInput"> Event name
-
-            <input type="text" class="name" name="name" placeholder="Event name"></div>
-                   <div class="bDate"><span class="it">From</span>
-
-                <input type="date" class="date" name="startDate" placeholder="StartDate" required>
-            </div>
-                   <div class="bDate"><span class="it">To</span>
-
-                <input type="date" class="date" name="endDate" placeholder="endDate" required>
-            </div>
-                   <div class="linkTo"> Website URL
-
-                       <input type="text"  name="url" placeholder="URL"  />
-                   </div>
-                   <div class="pic">
-                   <input type="file" id="file1"  name="editPicture" style="display:block" />
-                   </div>
-
-               </div>
+                <div class="left">
+                    <div class="nameInput"> Event name
+                        <input type="text" class="name" name="name" placeholder="Event name"></div>
+                    <div class="bDate"><span class="it">From</span>
+                        <input type="date" class="date" name="startDate" placeholder="StartDate" required>
+                    </div>
+                    <div class="bDate"><span class="it">To</span>
+                        <input type="date" class="date" name="endDate" placeholder="endDate" required>
+                    </div>
+                    <div class="linkTo"> Website URL
+                        <input type="text"  name="url" placeholder="URL"  />
+                    </div>
+                    <div class="pic">
+                        <input type="file" id="file1"  name="editPicture" style="display:block" />
+                    </div>
+                </div>
                 <div class="right">
-                <div class="bDate">Select a country
-                    <select class="col-xs-4 " id="country" name="country">
-                        <option th:each="country: ${countries}"
-                                th:value="${country.id}"
-                                th:text="${country.name}"/>
-                    </select>
-                </div>
+                    <div class="bDate">Select a country
+                        <select class="col-xs-4 " id="country" name="country">
+                            <option th:each="country: ${countries}"
+                                    th:value="${country.id}"
+                                    th:text="${country.name}"/>
+                        </select>
+                    </div>
                     <div class="bDate"><span class="it">at (Local time)</span>
-                    <input type="time" class="date" name="startTime" placeholder="HH-mm" required>
-                </div>
+                        <input type="time" class="date" name="startTime" placeholder="HH-mm" required>
+                    </div>
                     <div class="bDate"><span class="it">at (Local time)</span>
-
-                <input type="time" class="date" name="endTime" placeholder="HH-mm" required>
-            </div>
+                        <input type="time" class="date" name="endTime" placeholder="HH-mm" required>
+                    </div>
                     <div class="linkTo"> Festicket URL
-
                         <input type="text"  name="ticketUrl" placeholder="Festicket URL"/>
                     </div>
                     <div class="subBtn">
-            <button>Submit</button></div>
+                        <button>Submit</button></div>
                 </div>
-        </div>
+            </div>
         </form>
     </div>
 </div>
