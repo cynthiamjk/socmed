@@ -20,35 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf790852-21b8-43a8-9a12-5dc96f45848f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/ReportDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/ReportObjectDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Report.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/ReportObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/ReportObjectService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/ApplicationStartup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/ApplicationStartup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Artist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Style.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/adminPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/adminPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addEvent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/homePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/homePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/comp/ApplicationStartup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/comp/ApplicationStartup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/Artist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/Style.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/adminPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/adminPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/addEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addEvent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/adminPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/adminPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/homePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/homePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

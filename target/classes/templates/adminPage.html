@@ -37,7 +37,6 @@
 	<br>
 
 	<div class="content">
- <span th:text="${number}"></span>
 		<div class="inner">
 			<div class="titles">Users</div>
 			<div class="blocks">
@@ -53,7 +52,7 @@
 				<span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><span class="fas fa-cog"></span><a th:href="@{/postOptions}" >Posts options</a></span>
 			</div>
 			<div class="rep">
-				<p>reports</p>
+				<span th:text="${postNumber}"></span> post reports
 			</div>
 		</div>
 		<div class="inner">
