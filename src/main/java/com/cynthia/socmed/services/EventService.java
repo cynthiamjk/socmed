@@ -2,20 +2,17 @@ package com.cynthia.socmed.services;
 
 import com.cynthia.socmed.DAO.EventDao;
 import com.cynthia.socmed.comp.EventTimeComparator;
-import com.cynthia.socmed.models.Country;
 import com.cynthia.socmed.models.Event;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -63,10 +60,8 @@ public class EventService {
     }
 
 
-    public void addEvent (String name, LocalDate startDate, LocalTime startTime, LocalDate  endDate,
-                          LocalTime endTime, Country c, MultipartFile editPicture, String url, String ticketUrl,
-                          RedirectAttributesModelMap redirectAttributesModelMap) throws IOException {
-
+    public void addEvent (MultipartFile editPicture, Event v) throws IOException {
+        LocalDate localDate = LocalDate.now();
         Event event = new Event();
         List<Event> events = (List<Event>) eventDao.findAll();
         if(!events.isEmpty()) {
@@ -91,24 +86,17 @@ public class EventService {
             event.setPicturePath("images/"+n+".jpg");
 
         }
-        String safeName = Jsoup.clean(name, Whitelist.basic());
+        String safeName = Jsoup.clean(v.getName(), Whitelist.basic());
         event.setName(safeName);
-        event.setStartDate(startDate);
-        event.setTimeStart(startTime);
-        event.setEndDate(endDate);
-        event.setTimeEnd(endTime);
-        event.setLocation(c);
 
-        if(!url.startsWith("https://")) {
-            redirectAttributesModelMap.addFlashAttribute("urlError", "Invalid url");
-        }
-        if(!ticketUrl.contains("https://www.festicket.com")) {
-            redirectAttributesModelMap.addFlashAttribute("urlErrorTicket", "Invalid url");
-        }
-
-        String safeUrl = Jsoup.clean(url, Whitelist.basic());
+            event.setStartDate(v.getStartDate());
+            event.setEndDate(v.getEndDate());
+        event.setTimeStart(v.getTimeStart());
+        event.setTimeEnd(v.getTimeEnd());
+        event.setLocation(v.getLocation());
+        String safeUrl = Jsoup.clean(v.getUrl(), Whitelist.basic());
         event.setUrl(safeUrl);
-        String safeTicketUrl = Jsoup.clean(ticketUrl, Whitelist.basic());
+        String safeTicketUrl = Jsoup.clean(v.getTicketUrl(), Whitelist.basic());
         event.setTicketUrl(safeTicketUrl);
         eventDao.save(event);
 

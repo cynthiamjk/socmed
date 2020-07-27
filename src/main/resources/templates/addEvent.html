@@ -34,20 +34,24 @@
 <div class="content">
     <div class="contentparts">
         <div class="oon"><h4>New event</h4><p>(Please make sure that all informations are correct or the event may be removed)</p></div>
-        <form action="/newEvent" method="post" enctype="multipart/form-data">
+        <span th:text="${err}" style="color: red; font-style: italic"></span>
+        <form action="/newEvent" method="post"  modelAttribute="eventForm" enctype="multipart/form-data">
         <div class="eventBody">
 
                <div class="left">
                    <div class="nameInput"> Event name
+
             <input type="text" class="name" name="name" placeholder="Event name"></div>
                    <div class="bDate"><span class="it">From</span>
+
                 <input type="date" class="date" name="startDate" placeholder="StartDate" required>
             </div>
                    <div class="bDate"><span class="it">To</span>
+
                 <input type="date" class="date" name="endDate" placeholder="endDate" required>
             </div>
                    <div class="linkTo"> Website URL
-                       <span th:text="${urlError}"  style="color: red; font-style: italic"></span>
+
                        <input type="text"  name="url" placeholder="URL"  />
                    </div>
                    <div class="pic">
@@ -67,14 +71,15 @@
                     <input type="time" class="date" name="startTime" placeholder="HH-mm" required>
                 </div>
                     <div class="bDate"><span class="it">at (Local time)</span>
+
                 <input type="time" class="date" name="endTime" placeholder="HH-mm" required>
             </div>
                     <div class="linkTo"> Festicket URL
-                        <span th:text="${urlErrorTicket}" style="color: red; font-style: italic"></span>
+
                         <input type="text"  name="ticketUrl" placeholder="Festicket URL"/>
                     </div>
                     <div class="subBtn">
-            <button>submit</button></div>
+            <button>Submit</button></div>
                 </div>
         </div>
         </form>

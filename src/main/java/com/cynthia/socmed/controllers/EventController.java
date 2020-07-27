@@ -1,15 +1,16 @@
 package com.cynthia.socmed.controllers;
 
 
+import com.cynthia.socmed.comp.EventValidator;
 import com.cynthia.socmed.models.Country;
+import com.cynthia.socmed.models.Event;
 import com.cynthia.socmed.services.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
@@ -25,25 +26,37 @@ public class EventController {
     @Autowired
     EventService eventService;
 
+    @Autowired
+    EventValidator eventValidator;
+
     @RequestMapping(value = "/newEvent", method = RequestMethod.POST)
-    public String eventForm(
-            @RequestParam(value = "name") String name,
-            @RequestParam(value = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-            @RequestParam(value = "startTime") LocalTime startTime,
-            @RequestParam(value = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate,
-            @RequestParam(value = "endTime") LocalTime endTime,
-            @RequestParam(value = "country") Country c,
+    public String eventForm (@ModelAttribute("eventForm") Event v, ModelMap modelMap,
+            @RequestParam(value = "name", required = true) String name,
+            @RequestParam(value = "startDate", required = true) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+            @RequestParam(value = "startTime",  required = true) LocalTime startTime,
+            @RequestParam(value = "endDate",  required = true) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate,
+            @RequestParam(value = "endTime",  required = true) LocalTime endTime,
+            @RequestParam(value = "country",  required = true) Country c,
             @RequestParam(value = "editPicture", required = false) MultipartFile editPicture,
             @RequestParam(value = "url", required = false) String url,
             @RequestParam(value = "ticketUrl", required = false) String ticketUrl,
-            RedirectAttributesModelMap redirectAttributesModelMap) throws IOException {
+            RedirectAttributesModelMap redirectAttributesModelMap, BindingResult bindingResult) throws IOException {
 
-        eventService.addEvent(name, startDate, startTime, endDate, endTime, c,
-                editPicture, url, ticketUrl, redirectAttributesModelMap);
+        eventValidator.validate(v, bindingResult);
+        if (bindingResult.hasErrors()) {
+            redirectAttributesModelMap.addFlashAttribute("err", bindingResult.getFieldError().getDefaultMessage());
+            System.out.println(bindingResult.getFieldError().getDefaultMessage());
+            return "redirect:addEvent";
+        } else if (((url.equals("")) || (url.startsWith("https://"))
+                  && (((ticketUrl.equals("")) || (url.startsWith("https://www.festicket.com")))))) {
+            eventService.addEvent(editPicture, v);
+            return "redirect:addEvent";
+        } else {
+            redirectAttributesModelMap.addFlashAttribute("err", "Invalid Url");
+
+        }
 
         return "redirect:addEvent";
-
-
 
     }
 

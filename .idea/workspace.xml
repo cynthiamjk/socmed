@@ -20,16 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf790852-21b8-43a8-9a12-5dc96f45848f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/adminPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/friendRequests.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/EventValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/book.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addEvent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/friendRequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/friendRequests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/friendsProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/friendsProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/EventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/EventController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/EventService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/EventService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addEvent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/adminPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/adminPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/friendRequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/friendRequests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/friendsProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/friendsProfile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +50,8 @@
       <list>
         <option value="Enum" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -188,25 +191,25 @@
     </state>
     <state x="743" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595676890044" />
     <state x="743" y="298" width="426" height="483" key="FileChooserDialogImpl/0.28.1920.1024@0.28.1920.1024" timestamp="1591280014166" />
-    <state width="1860" height="205" key="GridCell.Tab.0.bottom" timestamp="1595801351112">
+    <state width="1860" height="205" key="GridCell.Tab.0.bottom" timestamp="1595862351858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595801351112" />
+    <state width="1860" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595862351858" />
     <state width="1874" height="231" key="GridCell.Tab.0.bottom/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
-    <state width="1860" height="205" key="GridCell.Tab.0.center" timestamp="1595801351112">
+    <state width="1860" height="205" key="GridCell.Tab.0.center" timestamp="1595862351858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595801351112" />
+    <state width="1860" height="205" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595862351858" />
     <state width="1874" height="231" key="GridCell.Tab.0.center/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
-    <state width="1860" height="205" key="GridCell.Tab.0.left" timestamp="1595801351112">
+    <state width="1860" height="205" key="GridCell.Tab.0.left" timestamp="1595862351858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595801351112" />
+    <state width="1860" height="205" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595862351858" />
     <state width="1874" height="231" key="GridCell.Tab.0.left/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416932" />
-    <state width="1860" height="205" key="GridCell.Tab.0.right" timestamp="1595801351112">
+    <state width="1860" height="205" key="GridCell.Tab.0.right" timestamp="1595862351858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="205" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595801351112" />
+    <state width="1860" height="205" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595862351858" />
     <state width="1874" height="231" key="GridCell.Tab.0.right/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
     <state width="1860" height="326" key="GridCell.Tab.1.bottom" timestamp="1594570073274">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -236,10 +239,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="721" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595795544738" />
-    <state width="498" height="454" key="SwitcherDM" timestamp="1594824066831">
+    <state width="498" height="454" key="SwitcherDM" timestamp="1595852347688">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="498" height="454" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1594824066831" />
+    <state width="498" height="454" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1595852347688" />
     <state width="498" height="447" key="SwitcherDM/0.28.1920.1024@0.28.1920.1024" timestamp="1588856914436" />
     <state x="921" y="448" width="591" height="228" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1595252961058">
       <screen x="0" y="0" width="1920" height="1040" />
