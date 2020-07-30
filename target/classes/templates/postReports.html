@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <title>Name</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="userPage.css">
+    <link rel="stylesheet" type="text/css" href="userSettings.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <script type="text/javascript" src="signup.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-grey">
+    <ul class="navbar-nav">
+        <li  class="nav-item" >
+            <a th:href="@{/profile}"></span></a>
+        </li>
+        <li class="nav-item">
+            <span th:if="${user.username != null}"><a th:href="@{/logout}" >Log out</a></span>
+        </li>
+        <li class="nav-item">
+            <span th:if="${user.username != null}"><a th:href="@{/userSettings}">Settings</a></span>
+        </li>
+        <li class="nav-item">
+            <span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><a th:href="@{/adminPage}" >Admin Page</a></span>
+        </li>
+    </ul>
+</nav>
+<br>
+
+
+
+<div class="content">
+    <table>
+        <th>Post Id</th>
+        <th>Occurences</th>
+        <th:block th:each="count : ${sorted}">
+            <tr>
+            <td th:text="${count.key}"></td>
+            <td th:text="${count.value}"></td>
+            </tr>
+        </th:block>
+
+        <table>
+            <th>Reported by</th>
+            <th>Date</th>
+            <th>Object</th>
+            <th>Post Nr.</th>
+            <th:block th:each="postReport : ${postReports}">
+                <tr>
+                    <td th:text="${postReport.sender.username}"></td>
+                    <td th:text="${postReport.date}"></td>
+                    <td th:text="${postReport.reportObject.name}"></td>
+                    <td th:text="${postReport.post.id}"></td>
+                </tr>
+            </th:block>
+        </table>
+</div>
+
+</body>
+</html>

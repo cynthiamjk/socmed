@@ -220,22 +220,25 @@ public class PostService {
         for (Likes lis : likedPosts) {
             postIds.add(lis.getPost().getId());
         }
-        if (postIds.contains(p.getId())){
-            for (Likes l : likedPosts) {
-                if (l.getPost().getId()==p.getId() && l.getUser().getId()==u.getId()) {
-                    likesDao.delete(l);
+        if (u != null) {
+            if (postIds.contains(p.getId())) {
+                for (Likes l : likedPosts) {
+                    if (l.getPost().getId() == p.getId() && l.getUser().getId() == u.getId()) {
+                        likesDao.delete(l);
+                    }
                 }
-            }
-        } else {
-            Likes like = new Likes();
-            like.setUser(u);
-            like.setPost(p);
-            likesDao.save(like);
+            } else {
+                Likes like = new Likes();
+                like.setUser(u);
+                like.setPost(p);
+                likesDao.save(like);
 
+            }
+            p.setLikes(countLikes(p));
+            postDao.save(p);
+            return likedPosts;
         }
-        p.setLikes(countLikes(p));
-        postDao.save(p);
-        return likedPosts;
+        return null;
     }
 
     public void deletePost (Post p, User u, String author) {

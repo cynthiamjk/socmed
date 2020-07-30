@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toMap;
 
 @Controller
 @SessionAttributes("user")
@@ -52,6 +54,41 @@ public class AdminController {
         modelMap.addAttribute("eventNumber", eventNumber);
         modelMap.addAttribute("userNumber", userNumber);
         return "adminPage";
+    }
+
+    @RequestMapping(value = "/postReports", method = RequestMethod.GET)
+
+    public String postReports (User u, ModelMap modelMap) {
+        if (u.getId() == 1) {
+            List<Report> reports = (List<Report>) reportDao.findAll();
+            List<Integer> posts =  new ArrayList<>();
+
+            List<Report> postReports = new ArrayList<>();
+            for (Report report : reports) {
+                if (report.getPost() != null) {
+                    postReports.add(report);
+                }
+            }
+            for( Report postReport : postReports) {
+                posts.add(postReport.getPost().getId());
+
+            }
+
+            Map<Integer, Long> counts = posts.stream().collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+
+            Map<Integer, Long> sorted = counts
+                    .entrySet()
+                    .stream()
+                    .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                    .collect(
+                            toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
+                                    LinkedHashMap::new));
+            modelMap.addAttribute("sorted", sorted);
+            modelMap.addAttribute("postReports", postReports);
+            return "postReports";
+        }
+return "redirect:/";
+
     }
 
 }

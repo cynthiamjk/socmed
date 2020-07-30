@@ -103,7 +103,7 @@ public class LoginController {
             passwordResetEmail.setTo(user.getEmail());
             passwordResetEmail.setSubject("Password Reset Request");
             passwordResetEmail.setText("To reset your password, click the link below:\n" + appUrl
-                    + ":8088/reset?token=" + user.getResetToken());
+                    + ":8089/reset?token=" + user.getResetToken());
 
             emailService.sendEmail(passwordResetEmail);
 

@@ -43,7 +43,7 @@
 				<span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><span class="fas fa-cog"></span><a th:href="@{/userOptions}" >Users options</a></span>
 		</div>
 			<div class="rep">
-				<p>reports</p>
+				<span th:text="${userNumber}"></span> user report(s).
 			</div>
 		</div>
 		<div class="inner">
@@ -52,7 +52,7 @@
 				<span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><span class="fas fa-cog"></span><a th:href="@{/postOptions}" >Posts options</a></span>
 			</div>
 			<div class="rep">
-				<span th:text="${postNumber}"></span> post reports
+				<a th:href="@{/postReports}">	<span th:text="${postNumber}"></span> post report(s).</a>
 			</div>
 		</div>
 		<div class="inner">
@@ -61,7 +61,7 @@
 				<span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><span class="fas fa-cog"></span><a th:href="@{/eventOptions}" >Event options</a></span>
 			</div>
 			<div class="rep">
-				<p>reports</p>
+				<span th:text="${eventNumber}"></span> event report(s).
 			</div></div>
 		</div>
 	</div>

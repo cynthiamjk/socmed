@@ -165,7 +165,7 @@
 						<div class="postDate">
 							On <span id="mm" th:text="${item.date}"></span>
 							by <span th:text="${item.author}"></span>
-							<span th:text="${item.id}"></span>
+
 						</div>
 						<div class="dropdown">
 							<button class="fas fa-bars"></button>
@@ -281,7 +281,8 @@
 								</div>
 								<div class="modal-body">
 									<div class="form-group">
-										<input  type="hidden" value="id" class="form-control" id="id2" name="id2"/></div>
+										<input  type="hidden" value="id" class="form-control" id="id2" name="id2"/>
+									</div>
 									<div class="form-group">
 										<ul>
 											<li th:each="reportObject : ${reportObjects}">
@@ -289,8 +290,7 @@
 												<label th:for="${reportObject.name}" th:text="${reportObject.name}"></label>
 											</li>
 										</ul>
-											</div>
-										</div>
+
 									</div>
 								</div>
 								<div class="modal-footer">
