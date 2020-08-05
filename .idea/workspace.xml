@@ -20,17 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf790852-21b8-43a8-9a12-5dc96f45848f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/postReports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/DAO/BlockedDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/models/Blocked.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/postOptionsModals.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/ApplicationStartup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/comp/ApplicationStartup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cynthia/socmed/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/userPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/userPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/comp/ApplicationStartup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/comp/ApplicationStartup.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/services/PostService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/adminPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/adminPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cynthia/socmed/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/userPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/userPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,9 +53,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -190,25 +195,25 @@
     </state>
     <state x="743" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595676890044" />
     <state x="743" y="298" width="426" height="483" key="FileChooserDialogImpl/0.28.1920.1024@0.28.1920.1024" timestamp="1591280014166" />
-    <state width="1860" height="232" key="GridCell.Tab.0.bottom" timestamp="1596068502824">
+    <state width="1860" height="232" key="GridCell.Tab.0.bottom" timestamp="1596667186777">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596068502824" />
+    <state width="1860" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596667186777" />
     <state width="1874" height="231" key="GridCell.Tab.0.bottom/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
-    <state width="1860" height="232" key="GridCell.Tab.0.center" timestamp="1596068502824">
+    <state width="1860" height="232" key="GridCell.Tab.0.center" timestamp="1596667186776">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596068502824" />
+    <state width="1860" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596667186776" />
     <state width="1874" height="231" key="GridCell.Tab.0.center/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
-    <state width="1860" height="232" key="GridCell.Tab.0.left" timestamp="1596068502806">
+    <state width="1860" height="232" key="GridCell.Tab.0.left" timestamp="1596667186776">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596068502806" />
+    <state width="1860" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596667186776" />
     <state width="1874" height="231" key="GridCell.Tab.0.left/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416932" />
-    <state width="1860" height="232" key="GridCell.Tab.0.right" timestamp="1596068502824">
+    <state width="1860" height="232" key="GridCell.Tab.0.right" timestamp="1596667186776">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596068502824" />
+    <state width="1860" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596667186776" />
     <state width="1874" height="231" key="GridCell.Tab.0.right/0.28.1920.1024@0.28.1920.1024" timestamp="1591688416933" />
     <state width="1860" height="326" key="GridCell.Tab.1.bottom" timestamp="1594570073274">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -255,10 +260,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="235" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594056266322" />
-    <state x="623" y="229" width="672" height="689" key="search.everywhere.popup" timestamp="1594727013207">
+    <state x="623" y="229" width="672" height="689" key="search.everywhere.popup" timestamp="1596663092236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="229" width="672" height="689" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594727013207" />
+    <state x="623" y="229" width="672" height="689" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596663092236" />
     <state x="623" y="253" width="672" height="678" key="search.everywhere.popup/0.28.1920.1024@0.28.1920.1024" timestamp="1591558603505" />
     <state x="790" y="309" key="svn.repositoryBrowser" timestamp="1592319497430">
       <screen x="0" y="0" width="1920" height="1040" />

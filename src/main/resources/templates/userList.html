@@ -70,17 +70,22 @@
 						</form>
     </span>
     <span th:unless="${#lists.contains(friendsName, '__${item.username}__')}">
-          <span th:if="${item.profilePicturePath != null}">
-									<img th:src="${item.profilePicturePath}" style="width: 20px;height: 20px; border-radius: 50%"></span>
-            <span th:unless="${item.profilePicturePath != null}">
-					<img src="defaultPicture.jpg" style="width: 20px;height: 20px; border-radius: 50%" ></span>
+          <span th:if="${item.profilePicturePath != null}"><img th:src="${item.profilePicturePath}" style="width: 20px;height: 20px; border-radius: 50%"></span>
+            <span th:unless="${item.profilePicturePath != null}"><img src="defaultPicture.jpg" style="width: 20px;height: 20px; border-radius: 50%" ></span>
+         <span th:if="${not #lists.contains(blockedUsers, '__${item.username}__')}">
     <form th:action="@{/addFriend}" method="post">
           <input type="hidden" name="item" th:value="${item.username}"><span th:text="${item.username}"></span>
                <button type="submit" class="fas fa-plus" title="Send friend request" ></button>
    </form>
-
+              </span>
+              <span th:unless="${ not #lists.contains(blockedUsers, '__${item.username}__')}">
+ <form th:action="@{/unblock}" method="post">
+          <input type="hidden" name="item" th:value="${item.username}"><span th:text="${item.username}"></span>
+               <button type="submit" class="fas fa-times-circle" title="Unblock" ></button>
+   </form>
     </span>
 
+    </span>
     </span>
 </div>
 <script>

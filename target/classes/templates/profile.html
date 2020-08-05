@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
@@ -320,10 +322,11 @@
   $("#search").keyup(function() {
     var x = document.getElementById('users');
     if($(this).val() == "") {
-      x.style.display = 'none';
+     x.style.display = 'none';
     } else {
       x.style.display = 'block';
     }
+
   });
 });
 
@@ -336,10 +339,13 @@ function searchUsers() {
   filter = input.value.toUpperCase();
   table = document.getElementById("users");
   tr = table.getElementsByTagName("form");
+
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByClassName("usersBody")[0];
     if (td) {
       txtValue = td.textContent || td.innerText;
+
+
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
       } else {
@@ -455,4 +461,6 @@ window.onclick = function(event) {
 
 </body>
 </html>
+
+
 

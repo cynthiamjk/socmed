@@ -39,6 +39,7 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
     ReportObjectDao reportObjectDao;
 
     @Override
+
     public void onApplicationEvent(final ApplicationReadyEvent event) {
 
         List<Country> countries = (List<Country>) countryDao.findAll();

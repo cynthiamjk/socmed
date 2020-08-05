@@ -1,9 +1,6 @@
 package com.cynthia.socmed.services;
 
-import com.cynthia.socmed.DAO.FriendshipDao;
-import com.cynthia.socmed.DAO.LikesDao;
-import com.cynthia.socmed.DAO.RoleDao;
-import com.cynthia.socmed.DAO.UserDao;
+import com.cynthia.socmed.DAO.*;
 import com.cynthia.socmed.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -32,6 +29,9 @@ public class UserService  {
     @Autowired
     RoleDao roleDao;
 
+    @Autowired
+    BlockedDao blockedDao;
+
 
 
     public void registerUser(User user) {
@@ -50,8 +50,8 @@ public class UserService  {
         user.setFriendListIsPublic(true);
 
 
-       if (users.isEmpty()) {
-           user.setRole(roleDao.findByName("ADMIN"));
+        if (users.isEmpty()) {
+            user.setRole(roleDao.findByName("ADMIN"));
         } else {
             user.setRole(roleDao.findByName("USER"));
         }
@@ -141,6 +141,35 @@ public class UserService  {
             friendsName.add(us.getUsername());
         }
         return friendsName;
+    }
+
+
+    public List<String> blockedUsers (User u) {
+        List<Blocked> blockedList = (List<Blocked>) blockedDao.findByUser(u);
+        List<String> blockedUserNames = new ArrayList<>();
+        for (Blocked blocked : blockedList) {
+            blockedUserNames.add(blocked.getBlockedUser().getUsername());
+        }
+        return  blockedUserNames;
+    }
+
+    public void blockUser(User theOneIWantToBlock, User u) {
+        List<Blocked> blockedList = (List<Blocked>) blockedDao.findByUser(u);
+        if(!blockedList.isEmpty()) {
+            for (Blocked blocked : blockedList) {
+                if (blocked.getBlockedUser().getId() != theOneIWantToBlock.getId()) {
+                    Blocked block = new Blocked();
+                    block.setUser(u);
+                    block.setBlockedUser(theOneIWantToBlock);
+                    blockedDao.save(block);
+                }
+            }
+        } else {
+            Blocked block = new Blocked();
+            block.setUser(u);
+            block.setBlockedUser(theOneIWantToBlock);
+            blockedDao.save(block);
+        }
     }
 
     public void save(User u) {
