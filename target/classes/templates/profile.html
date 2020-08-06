@@ -38,11 +38,10 @@
 			<div class="userSearch">Search user
 
 				<input type="text" name="search" id="search" th:value="${username}" onkeyup="searchUsers()"/>
+				<br>	<span th:text="${userNotFound}"></span>
 
-				<span th:text="${errSearchUser}"></span>
 				<div class="allUs" id="users">
 				<span th:each="search : ${allUsers}">
-
 				<form th:action="@{/searchAction}" method="get">
 					 <input type="hidden" name="item"  th:value="${search.username}">
 					<span th:if="${#lists.contains(friendsName, '__${search.username}__')}">
@@ -53,8 +52,8 @@
 				</form>
 				</span>
 				</div>
-
 			</div>
+
 		<li class="nav-item">
 			<span th:if="${user.username != null and #strings.equals(user.role.name,'ADMIN')}"><a th:href="@{/adminPage}" >Admin Page</a></span>
 		</li>
@@ -339,13 +338,10 @@ function searchUsers() {
   filter = input.value.toUpperCase();
   table = document.getElementById("users");
   tr = table.getElementsByTagName("form");
-
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByClassName("usersBody")[0];
     if (td) {
       txtValue = td.textContent || td.innerText;
-
-
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
       } else {
@@ -380,11 +376,8 @@ function searchFunction() {
  $(document).ready(function(){
         $('.smile').on('click', function(event){
             event.preventDefault();
-
             var v = $(this).html();
-
             $('#try').val( $('#try').val() +' '+ v);
-
             });
         });
 </script>
@@ -422,8 +415,6 @@ window.onclick = function(event) {
                  $('.myForm #author').val(item.author);
                     $('.myForm #defaultText').val(item.text);
                     $('.myForm #text').val(item.text);
-
-
             });
             $('.myForm #editPostModal').modal();
         });

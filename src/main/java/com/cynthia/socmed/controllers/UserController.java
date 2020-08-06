@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -53,11 +54,15 @@ public class UserController {
     @Autowired
     ReportDao reportDao;
 
+    @Autowired
+    BlockedService blockedService;
+
 
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
 
-    public String index(ModelMap model, User u) {
+    public String index(@RequestParam(value="search", required =false) String username,
+                        ModelMap model, User u) {
 
         //helps check if a post is liked by the user, display css on like button
         List<Post> likedPosts = userService.likedPost(u) ;
@@ -75,9 +80,8 @@ public class UserController {
 
         List <Emojis> emojis = (List<Emojis>) emojiService.findAll();
         model.addAttribute("emojis", emojis);
-
-        List<User> users = userService.findAll();
-        model.addAttribute("allUsers", users);
+        
+        model.addAttribute("allUsers", userService.thatDidNotBlockMe(u));
 
         List <String> friendsName =userService.friendsNames(friends);
         model.addAttribute("friendsName", friendsName);
@@ -113,33 +117,25 @@ public class UserController {
         return "userSettings";
     }
 
-    /* @RequestMapping(value = "/searchUser", method = RequestMethod.POST)
-     public String findUser(@RequestParam(value = "search", required = false) String username, Model model, User u,
-                            RedirectAttributesModelMap redirectAttributesModelMap) {
-         if (!username.matches("[\\w*\\s*]*")) {
-             redirectAttributesModelMap.addFlashAttribute("errSearchUser", "We couldn't find what you were looking for");
-             return "redirect:profile";
-         }
-         if (userService.existsByUsername(username)) {
-             List<User> friends = userService.getFriendship(u);
-             List <String> friendsName =userService.friendsNames(friends);
-             model.addAttribute("friendsName", friendsName);
-             model.addAttribute("friends", friends);
-             model.addAttribute("item", username);
-             model.addAttribute("friend", userService.findByUsername(username));
-             return "userList";
-         }
-         redirectAttributesModelMap.addFlashAttribute("errSearchUser", "We couldn't find what you were looking for");
-         return "redirect:profile";
-     }*/
+
     @RequestMapping(value = "/searchAction", method = RequestMethod.GET)
-    public String uResult( @RequestParam(value="item", required =false) String username,
-                           @RequestParam(name="action", defaultValue = "") String action,
-                           ModelMap model, User u) {
+    public String uResult(@RequestParam(value="item", required =false) String username,
+                          @RequestParam(name="action", defaultValue = "") String action,
+                          ModelMap model, User u, RedirectAttributesModelMap redirectAttributesModelMap) {
+
         User item = userService.findByUsername(username);
+        if(userService.principalIsBlocked(u, item)) {
+            item = null;
+        }
         List<User> friends = userService.getFriendship(u);
         List <String> friendsName =userService.friendsNames(friends);
         List<User> users = userService.findAll();
+        List<User> notBlocked = new ArrayList<>();
+        for(User us : users) {
+            if(!userService.principalIsBlocked(u, item)) {
+                notBlocked.add(us);
+            }
+        }
         switch(action) {
             case "visitProfile":
                 if (friendshipService.areFriends(item, u)) {
@@ -158,11 +154,13 @@ public class UserController {
                 model.addAttribute("allUsers", users);
                 model.addAttribute("friendsName", friendsName);
                 model.addAttribute("friends", friends);
-                model.addAttribute("item", item);
-                List<User> us = userService.findAll();
-                model.addAttribute("allUsers", us);
-                System.out.println(blockedUsers);
-                return "userList";
+                if(item != null) {
+                    model.addAttribute("item", item);
+                    return "userList";
+                } else {
+                    redirectAttributesModelMap.addFlashAttribute("userNotFound", "User doesn't exist!");
+
+                }
 
             default:
         }

@@ -12,4 +12,6 @@ public interface BlockedDao extends CrudRepository<Blocked, Integer> {
 
 
     public List<Blocked> findByUser(User u);
+
+    public List<Blocked> findByBlockedUser(User u);
 }

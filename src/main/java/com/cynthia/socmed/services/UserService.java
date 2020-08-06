@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -144,8 +145,28 @@ public class UserService  {
     }
 
 
+
+    public List<User> thatDidNotBlockMe (User u){
+        List<User> cleanList = userDao.findAll();
+        List<User> theOnesThatBlockedPrincipal = new ArrayList<>();
+        List<Blocked> blockedList = blockedDao.findByBlockedUser(u);
+        Iterator itr = cleanList.iterator();
+          for (Blocked bl : blockedList) {
+              theOnesThatBlockedPrincipal.add(bl.getUser());
+          }
+          while(itr.hasNext()) {
+              User y = (User) itr.next();
+              if(theOnesThatBlockedPrincipal.contains(y))
+                  itr.remove();
+          }
+
+
+return cleanList;
+    }
+
+
     public List<String> blockedUsers (User u) {
-        List<Blocked> blockedList = (List<Blocked>) blockedDao.findByUser(u);
+        List<Blocked> blockedList = blockedDao.findByUser(u);
         List<String> blockedUserNames = new ArrayList<>();
         for (Blocked blocked : blockedList) {
             blockedUserNames.add(blocked.getBlockedUser().getUsername());
@@ -153,8 +174,18 @@ public class UserService  {
         return  blockedUserNames;
     }
 
+    public boolean principalIsBlocked (User u, User otherUser) {
+        List<Blocked> blockedList = blockedDao.findByUser(otherUser);
+        for (Blocked blocked : blockedList) {
+            if (blocked.getBlockedUser().getId() == u.getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void blockUser(User theOneIWantToBlock, User u) {
-        List<Blocked> blockedList = (List<Blocked>) blockedDao.findByUser(u);
+        List<Blocked> blockedList = blockedDao.findByUser(u);
         if(!blockedList.isEmpty()) {
             for (Blocked blocked : blockedList) {
                 if (blocked.getBlockedUser().getId() != theOneIWantToBlock.getId()) {
