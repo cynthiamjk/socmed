@@ -47,7 +47,6 @@ public class UserService  {
         user.setBirthdate(user.getBirthdate());
         user.setCountry(user.getCountry());
         user.setAge(Period.between(user.getBirthdate(), LocalDate.now()).getYears());
-        user.setEventIsPublic(true);
         user.setFriendListIsPublic(true);
 
 

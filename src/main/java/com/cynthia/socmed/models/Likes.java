@@ -20,6 +20,38 @@ public class Likes {
     @JoinColumn(name = "post.id")
     private Post post;
 
+    public Likes() {
+    }
+
+    public Likes(int id, User user, Post post) {
+        this.id = id;
+        this.user = user;
+        this.post = post;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
 
     @Override
     public boolean equals(Object o) {

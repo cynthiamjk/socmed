@@ -38,9 +38,7 @@ public class AdminController {
         List<Report> eventReports = new ArrayList<>();
 
         for(Report report: reports) {
-            if (report.getEvent() != null) {
-                eventReports.add(report);
-            }
+
             if (report.getPost() != null) {
                 postReports.add(report);
             }

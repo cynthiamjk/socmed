@@ -1,10 +1,8 @@
 package com.cynthia.socmed.models;
 
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -21,8 +19,38 @@ public class FriendRequest {
     @ManyToOne
     private User dest;
 
+    public FriendRequest() {
+    }
 
+    public FriendRequest(int id, User sender, User dest) {
+        this.id = id;
+        this.sender = sender;
+        this.dest = dest;
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getSender() {
+        return sender;
+    }
+
+    public void setSender(User sender) {
+        this.sender = sender;
+    }
+
+    public User getDest() {
+        return dest;
+    }
+
+    public void setDest(User dest) {
+        this.dest = dest;
+    }
 
     @Override
     public boolean equals(Object o) {

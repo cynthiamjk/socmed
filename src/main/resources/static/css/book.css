@@ -1,0 +1,225 @@
+
+
+
+ .emailSenderContainer {
+ 	display: grid;
+ 	margin-left: 40%;
+ 	margin-right: 40%; 
+ 	margin-top: 30px;
+ 	padding: 10px;
+ 	grid-gap: 10px;
+ 	border: 1px solid black;
+ 	border-radius: 20px;
+ 	justify-content: space-around;
+ }
+
+ .emailSenderForm {
+ 	display: grid;
+ 	margin-top: 10px;
+ 	justify-content: center;
+
+ }
+
+ .top {
+ display: grid;
+ grid-template-columns: 300px 200px;
+ align-items: center;
+
+ }
+
+ .eventPic {
+  display: grid;
+  justify-content: center;
+ }
+
+ .sendbtn {
+ 	display: grid;
+ 	padding: 10px;
+ 	justify-content: center;
+ }
+
+ .policyAgreement {
+
+ 	font-size: 12px;
+ 	color: grey;
+
+ }
+
+
+
+.zzz {
+padding: 10px;
+}
+
+.eventLoc {
+display: grid;
+grid-template-columns: 100px 100px;
+justify-items: center;
+align-items: center;
+}
+
+.bot {
+display: grid;
+grid-template-columns: 60px 150px 40px 150px;
+justify-items: center;
+}
+
+.date {
+font-style: italic;
+font-weight: lighter;
+
+}
+
+.start {
+display: block ruby;
+
+
+}
+
+
+
+ .title {
+ 	border-bottom: 1px dotted grey;
+
+ }
+
+ .col-xs-4 {
+ 	display: grid;
+ 	margin: 5px;
+ 	border: 1px solid grey;
+ 	border-radius: 5px;
+
+ }
+
+
+
+ .birthdate {
+ 	border: 1px solid grey;
+ 	border-radius: 8px;
+ 	color: grey;
+
+ }
+ .container {
+
+ 	display: grid;
+ 	grid-template-columns: 1fr 1fr;
+
+
+ 	margin-top: 10px;
+ 	margin-right: 20%;
+ }
+
+
+ .log {
+ 	display: grid;
+ 	grid-gap: 30px;
+ 	border: 1px solid black;
+ 	margin-top: 20px;
+ 	padding:15px;
+ 	margin-left: 10%;
+ 	margin-right: 30%;
+ 	border-radius: 25px;
+ 	border-style: groove;
+ }
+
+ .bDate {
+ 	color: black;
+ 	font-weight: lighter;
+ }
+
+ .help-block {
+ 	color: grey;
+ 	font-style: italic;
+ }
+
+
+
+
+
+ .loginError {
+ 	color: red;
+ }
+
+
+
+
+
+
+
+ .navbar {
+
+ 	border-bottom: 3px solid black;
+ 	justify-content:space-around;
+ 	color: black;
+
+
+ }
+
+
+ .nav-item {
+ 	padding: 10%
+
+ }
+
+ .notvalid {
+
+ 	border: 1px solid red;
+ }
+
+
+ .valid {
+
+ 	border: 2px solid rgb(0,255,0);
+ }
+
+
+ .btn {
+
+ 	background: grey;
+ 	border-color: grey;
+ 	color: white;
+ 	font-size: 14px;
+ }  
+
+ .btn:visited {
+
+ 	background: mediumpurple;
+ 	border-color: mediumpurple;
+ }
+
+ .btn:focus {
+
+ 	background: mediumpurple;
+ 	border-color: mediumpurple;
+ 	outline: mediumpurple;
+ } 
+
+ .btn:hover {
+
+ 	background: lightblue;
+ 	border-color: lightblue;
+ }
+
+
+
+ .btn:active {
+
+ 	background: mediumpurple;
+ 	border-color: mediumpurple;
+ }
+
+ .nav-link {
+
+ 	color: black;
+ }
+
+ .nav-link:hover {
+
+ 	color: grey;
+ }
+
+ .titles {
+
+ 	border-bottom: 1px dotted grey;
+ }
+
