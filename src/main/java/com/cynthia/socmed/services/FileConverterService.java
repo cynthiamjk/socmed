@@ -13,7 +13,7 @@ public class FileConverterService {
 
     public File convertFile (MultipartFile file, String username) throws IOException {
 
-        File convertFile = new File("C:\\Users\\CynthiaM\\Desktop\\socmed\\src\\main\\resources\\static\\profilePictures\\"+username+".jpg");
+        File convertFile = new File("C:\\Users\\ib\\socmed\\src\\main\\resources\\static\\profilePictures\\"+username+".jpg");
         convertFile.createNewFile();
         FileOutputStream fout = new FileOutputStream(String.valueOf(convertFile));
         fout.write(file.getBytes());
