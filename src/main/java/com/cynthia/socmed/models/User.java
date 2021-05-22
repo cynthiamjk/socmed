@@ -1,6 +1,5 @@
 package com.cynthia.socmed.models;
 
-import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -10,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Data
+
 public class User {
 
 
@@ -40,8 +39,7 @@ public class User {
 
     @ManyToMany
     private List<User> blocked;
-    @OneToMany
-    private List <Event> events;
+
 
 
     private String resetPassword;
@@ -49,7 +47,174 @@ public class User {
     @OneToOne
     private ConfirmationToken confirmationToken;
     private boolean friendListIsPublic;
-    private boolean eventIsPublic;
+
+    public User() {
+    }
+
+    public User(int id, String username, String email, String password, String passwordc, String salt, LocalDate birthdate,
+                int age, Country country, File profilePicture,
+                String profilePicturePath, Role role,
+                String resetPassword, String resetToken,
+                ConfirmationToken confirmationToken,
+                boolean friendListIsPublic) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.passwordc = passwordc;
+        this.salt = salt;
+        this.birthdate = birthdate;
+        this.age = age;
+        this.country = country;
+        this.profilePicture = profilePicture;
+        this.profilePicturePath = profilePicturePath;
+        this.role = role;
+        this.resetPassword = resetPassword;
+        this.resetToken = resetToken;
+        this.confirmationToken = confirmationToken;
+        this.friendListIsPublic = friendListIsPublic;
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPasswordc() {
+        return passwordc;
+    }
+
+    public void setPasswordc(String passwordc) {
+        this.passwordc = passwordc;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public LocalDate getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    public File getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(File profilePicture) {
+        this.profilePicture = profilePicture;
+    }
+
+    public String getProfilePicturePath() {
+        return profilePicturePath;
+    }
+
+    public void setProfilePicturePath(String profilePicturePath) {
+        this.profilePicturePath = profilePicturePath;
+    }
+
+
+
+
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+
+
+
+
+
+
+    public String getResetPassword() {
+        return resetPassword;
+    }
+
+    public void setResetPassword(String resetPassword) {
+        this.resetPassword = resetPassword;
+    }
+
+    public String getResetToken() {
+        return resetToken;
+    }
+
+    public void setResetToken(String resetToken) {
+        this.resetToken = resetToken;
+    }
+
+    public ConfirmationToken getConfirmationToken() {
+        return confirmationToken;
+    }
+
+    public void setConfirmationToken(ConfirmationToken confirmationToken) {
+        this.confirmationToken = confirmationToken;
+    }
+
+    public boolean isFriendListIsPublic() {
+        return friendListIsPublic;
+    }
+
+    public void setFriendListIsPublic(boolean friendListIsPublic) {
+        this.friendListIsPublic = friendListIsPublic;
+    }
+
+
 
     @Override
     public boolean equals(Object o) {
@@ -79,7 +244,7 @@ public class User {
                 ", resetPassword='" + resetPassword + '\'' +
                 ", confirmationToken=" + confirmationToken +
                 ", friendListIsPublic=" + friendListIsPublic +
-                ", eventIsPublic=" + eventIsPublic +
+
                 '}';
     }
 }

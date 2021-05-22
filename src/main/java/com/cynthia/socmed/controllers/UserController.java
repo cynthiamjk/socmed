@@ -54,10 +54,6 @@ public class UserController {
     @Autowired
     ReportDao reportDao;
 
-    @Autowired
-    BlockedService blockedService;
-
-
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
 
@@ -392,9 +388,10 @@ public class UserController {
                                       ModelMap modelMap) {
         User u = (User) modelMap.getAttribute("user");
         Post p = postService.findById(postId);
-        postService.deletePost(p, u, author);
+       postService.deletePost(p, u, author);
         return "redirect:profile";
     }
+
     @RequestMapping(path = "/findPostToDelete/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Post findPostToDelete(@PathVariable("id") int postId) {
@@ -414,7 +411,7 @@ public class UserController {
 
 
 
-    @RequestMapping(value = "/editPost", method = RequestMethod.POST)
+    @RequestMapping(value = "/updatePost", method = RequestMethod.POST)
     public String updatePostWithModal(@RequestParam(name="id", required = false) int id,
                                       @RequestParam(name = "text", defaultValue = "") String text,
                                       @RequestParam(name = "defaultText", defaultValue = "") String defaultText,

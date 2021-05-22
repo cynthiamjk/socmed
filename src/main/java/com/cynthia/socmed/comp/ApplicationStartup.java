@@ -51,7 +51,7 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
 
         try {
             if(countries.isEmpty()) {
-                BufferedReader br = new BufferedReader(new FileReader("C:/Users/CynthiaM/Desktop/socmed/src/main/resources/static/countriesOk.txt"));
+                BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\ib\\socmed\\src\\main\\resources\\static/countriesOk.txt"));
                 String s;
                 while ((line = br.readLine()) != null) {
                     Country c = new Country();
@@ -63,7 +63,7 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
 
             if(emojis.isEmpty()) {
                 List <String> emos = new ArrayList<>();
-                BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\CynthiaM\\Desktop\\socmed\\lol.txt"));
+                BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\ib\\socmed\\lol.txt"));
                 while ((line2 = br.readLine()) != null) {
                     emos.add(line2);
                 }

@@ -1,0 +1,146 @@
+ body {
+
+ background-color:white;
+ color: black;
+ }
+
+ #welcomeMessage {
+ color: black;
+ }
+
+ .navbar {
+
+border-bottom: 3px solid black;
+
+ 	color: black;
+  	position: fixed;
+  	top:0;
+     left:0;
+     right:0;
+     z-index:99;
+     background-color: white;
+ 	border-bottom: 3px solid mediumpurple;
+ 	justify-content: space-around;
+
+ }
+
+ .oon {
+  border-bottom: 1px dotted grey;
+ }
+
+ .acc {
+ font-style: italic;
+ }
+
+ .bye {
+ font-size: 15px;
+ font-style: italic;
+ font-weight: bold;
+
+ }
+
+ #other {
+ margin-left: -10px;
+ }
+
+ .countryDiv{
+ display: inline;
+ }
+
+ .nav-item {
+ 	padding: 10%
+
+ }
+
+.nav-link {
+ 	color: black;
+ }
+
+ .nav-link:hover {
+ 	color: grey;
+ }
+
+ .content  {
+ 	display: grid;
+ 	margin-left: 500px;
+ 	margin-right: 500px;
+ 	margin-top:150px;
+
+}
+ 	.contentparts  {
+
+   display: grid;
+   grid-gap: 10px;
+ 	margin: 20px;
+ 	padding: 20px;
+ 	border: 1px solid black;
+ 	border-radius: 25px;
+ 	align-items: center;
+ 	}
+
+ 	.btn{
+ 	display: grid;
+ 	align-self: center;
+ 	}
+
+ 	 .col-xs-4 {
+
+     	border: 1px solid grey;
+     	border-radius: 5px;
+
+     }
+
+     .in {
+     border: 1px solid grey;
+      border-radius: 5px;
+
+     }
+
+     .picture {
+     margin: 5px;
+     }
+
+     .btn {
+
+      	background: mediumpurple;
+      	border-color: mediumpurple;
+      	color: white;
+      	font-size: 14px;
+      }
+
+      .btn:visited {
+
+      	background: mediumpurple;
+      	border-color: mediumpurple;
+      }
+
+      .btn:focus {
+
+      	background: mediumpurple;
+      	border-color: mediumpurple;
+      	outline: mediumpurple;
+      }
+
+      .btn:hover {
+
+      	background: lightblue;
+      	border-color: lightblue;
+      }
+
+      .fas {
+
+      border: none;
+      color: #00ff55;
+
+
+
+      }
+
+
+
+
+
+
+
+
+
