@@ -39,9 +39,6 @@ public class User {
 
     @ManyToMany
     private List<User> blocked;
-
-
-
     private String resetPassword;
     private String resetToken;
     @OneToOne
@@ -55,7 +52,7 @@ public class User {
                 int age, Country country, File profilePicture,
                 String profilePicturePath, Role role,
                 String resetPassword, String resetToken,
-                ConfirmationToken confirmationToken,
+                ConfirmationToken confirmationToken, List<User> friends,
                 boolean friendListIsPublic) {
         this.id = id;
         this.username = username;
@@ -71,6 +68,7 @@ public class User {
         this.role = role;
         this.resetPassword = resetPassword;
         this.resetToken = resetToken;
+        this.friends = friends;
         this.confirmationToken = confirmationToken;
         this.friendListIsPublic = friendListIsPublic;
 
@@ -165,8 +163,13 @@ public class User {
     }
 
 
+    public List<User> getFriends() {
+        return friends;
+    }
 
-
+    public void setFriends(List<User> friends) {
+        this.friends = friends;
+    }
 
     public Role getRole() {
         return role;
